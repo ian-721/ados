@@ -1,0 +1,4 @@
+vendor/ados/contracts/* text eol=crlf
+vendor/ados/schemas/* text eol=crlf
+native-host/*.cmd text eol=crlf
+fixtures/public-native-host-manifest.json text eol=lf

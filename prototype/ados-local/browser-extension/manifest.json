@@ -1,0 +1,35 @@
+{
+  "manifest_version": 3,
+  "name": "ADOS Local Public Fixture",
+  "version": "0.1.1",
+  "description": "Owner-selected ChatGPT capture to authenticated local pre-dispatch intake.",
+  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArDlOb0/d7EJ6yr1H3QiF/bmBq/7ZU30GLYlyZ1DstlyC0WI9DwMGFzxFVsh+eRPddyzhg57eGb4YN4SfhxH+a8+VPB4J+cJN9qHcRmppAjIbkv/J+0WSr1Nax8RiAFXTNEtmIeZ5M8FpK+wBtuqCekl+RPlfqN2toZ5xw6BQ1+HNWfgKyLa8c1j9eSW7zp6Jt73nDdx1240EXiXjfFGskPMAcNd42g/8b3u8mPJiJ+P3ElPQEmhKGkdE8CmhSK4bCBCO/ETS8a6ouURI1O1NCUzvxgjbibfLVGKm5WQU/y2YViByQrIDpfcJHfftPF5j3+R6hj67bGaz8WnWSDxsdwIDAQAB",
+  "permissions": [
+    "sidePanel",
+    "nativeMessaging"
+  ],
+  "host_permissions": [
+    "https://chatgpt.com/*"
+  ],
+  "background": {
+    "service_worker": "service-worker.js"
+  },
+  "action": {
+    "default_title": "Open ADOS Local"
+  },
+  "side_panel": {
+    "default_path": "side-panel.html"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://chatgpt.com/*"
+      ],
+      "js": [
+        "capture-profile.js",
+        "content-script.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}

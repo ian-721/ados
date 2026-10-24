@@ -1,0 +1,10 @@
+prebuild-install info begin Prebuild-install version 7.1.3
+prebuild-install info looking for local prebuild @ prebuilds/better-sqlite3-v12.11.1-node-v127-linux-x64.tar.gz
+(node:18) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+prebuild-install info looking for cached prebuild @ <NPM_CACHE>/_prebuilds/f74951-better-sqlite3-v12.11.1-node-v127-linux-x64.tar.gz
+prebuild-install info found cached prebuild
+prebuild-install info unpacking @ <NPM_CACHE>/_prebuilds/f74951-better-sqlite3-v12.11.1-node-v127-linux-x64.tar.gz
+prebuild-install info unpack resolved to <CLEAN_CHECKOUT>/prototype/ados-local/node_modules/better-sqlite3/build/Release/better_sqlite3.node
+prebuild-install info unpack required <CLEAN_CHECKOUT>/prototype/ados-local/node_modules/better-sqlite3/build/Release/better_sqlite3.node successfully
+prebuild-install info install Successfully installed prebuilt binary!

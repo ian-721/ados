@@ -1,0 +1,273 @@
+{
+  "status": "OWNER_REVIEW",
+  "candidate_kind": "complete-source-with-reproducible-offline-synthetic-validation",
+  "publication_approved": false,
+  "source_repository": "ian-721/ados-local",
+  "source_commit": "38a70a666ac620450757cff14e8b568a88587e1c",
+  "target_repository": "ian-721/ados",
+  "target_base": "8bf7ad17bf812a9f29de15bc88e7b4c3cd208e21",
+  "local_branch": "candidate/ados-local-plan-b",
+  "previous_local_head": "d8c3aa80db39cbdcae9bc23cc5440142ff16db54",
+  "runtime_payload_sha256": "e7b0a7a5e82b08bd9559fe3003c30558807c666da4d783e1263493fcca33a127",
+  "runtime": {
+    "os": "Linux x64",
+    "node": "22.23.1",
+    "npm": "10.9.8",
+    "typescript": "6.0.3",
+    "node_abi": "127",
+    "better_sqlite3": "12.11.1",
+    "sqlite": "3.53.2",
+    "fast_uri": "3.1.9"
+  },
+  "source_files_verified": 131,
+  "source_bytes": 1210425,
+  "original_source_files_unchanged_git_bytes": 59,
+  "original_source_files_adapted": 55,
+  "original_readme_replaced": 1,
+  "internal_documents_excluded": 16,
+  "protocol_git_blobs_unchanged": 9,
+  "checks": [
+    {
+      "name": "clean-install",
+      "command": [
+        "npm",
+        "ci",
+        "--ignore-scripts",
+        "--no-audit",
+        "--no-fund"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:19:45.436196+00:00",
+      "finished_at_utc": "2026-10-24T12:19:50.910159+00:00",
+      "exit_code": 0,
+      "log": "evidence/clean-install.log",
+      "status": "PASS"
+    },
+    {
+      "name": "clean-prebuild",
+      "command": [
+        "node",
+        "../prebuild-install/bin.js",
+        "--verbose"
+      ],
+      "cwd": "prototype/ados-local/node_modules/better-sqlite3",
+      "started_at_utc": "2026-10-24T12:19:50.910407+00:00",
+      "finished_at_utc": "2026-10-24T12:19:51.041396+00:00",
+      "exit_code": 0,
+      "log": "evidence/clean-prebuild.log",
+      "status": "PASS"
+    },
+    {
+      "name": "clean-typecheck",
+      "command": [
+        "npm",
+        "run",
+        "typecheck"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:15.709748+00:00",
+      "finished_at_utc": "2026-10-24T12:20:18.790575+00:00",
+      "exit_code": 0,
+      "log": "evidence/clean-typecheck.log",
+      "status": "PASS"
+    },
+    {
+      "name": "clean-build",
+      "command": [
+        "npm",
+        "run",
+        "build"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:18.791085+00:00",
+      "finished_at_utc": "2026-10-24T12:20:21.908852+00:00",
+      "exit_code": 0,
+      "log": "evidence/clean-build.log",
+      "status": "PASS"
+    },
+    {
+      "name": "clean-tests-complete",
+      "command": [
+        "npm",
+        "test"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:21.909155+00:00",
+      "finished_at_utc": "2026-10-24T12:20:27.039286+00:00",
+      "exit_code": 0,
+      "log": "evidence/clean-tests-complete.log",
+      "status": "PASS_WITH_PLATFORM_SKIPS",
+      "tests": 94,
+      "passed": 86,
+      "failed": 0,
+      "skipped": 8
+    },
+    {
+      "name": "clean-extension-tests",
+      "command": [
+        "node",
+        "--test",
+        "browser-extension/*.test.js"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:27.039716+00:00",
+      "finished_at_utc": "2026-10-24T12:20:27.184299+00:00",
+      "exit_code": 0,
+      "log": "evidence/clean-extension-tests.log",
+      "status": "PASS",
+      "tests": 20,
+      "passed": 20,
+      "failed": 0,
+      "skipped": 0
+    },
+    {
+      "name": "demo-verify-contracts",
+      "command": [
+        "node",
+        "dist/src/cli/index.js",
+        "verify-contracts"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:27.184629+00:00",
+      "finished_at_utc": "2026-10-24T12:20:27.455939+00:00",
+      "exit_code": 0,
+      "log": "evidence/demo-verify-contracts.log",
+      "status": "PASS"
+    },
+    {
+      "name": "demo-walking-skeleton",
+      "command": [
+        "node",
+        "dist/src/cli/index.js",
+        "walking-skeleton"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:27.456267+00:00",
+      "finished_at_utc": "2026-10-24T12:20:27.819101+00:00",
+      "exit_code": 0,
+      "log": "evidence/demo-walking-skeleton.log",
+      "status": "PASS"
+    },
+    {
+      "name": "demo-forged-approval",
+      "command": [
+        "node",
+        "dist/src/cli/index.js",
+        "forged-approval"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:27.819428+00:00",
+      "finished_at_utc": "2026-10-24T12:20:27.981668+00:00",
+      "exit_code": 0,
+      "log": "evidence/demo-forged-approval.log",
+      "status": "PASS"
+    },
+    {
+      "name": "demo-false-completion",
+      "command": [
+        "node",
+        "dist/src/cli/index.js",
+        "false-completion"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:27.981998+00:00",
+      "finished_at_utc": "2026-10-24T12:20:28.148348+00:00",
+      "exit_code": 0,
+      "log": "evidence/demo-false-completion.log",
+      "status": "PASS"
+    },
+    {
+      "name": "demo-cancel",
+      "command": [
+        "node",
+        "dist/src/cli/index.js",
+        "cancel"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:28.148749+00:00",
+      "finished_at_utc": "2026-10-24T12:20:28.312669+00:00",
+      "exit_code": 0,
+      "log": "evidence/demo-cancel.log",
+      "status": "PASS"
+    },
+    {
+      "name": "demo-scope-violation",
+      "command": [
+        "node",
+        "dist/src/cli/index.js",
+        "scope-violation"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:28.313048+00:00",
+      "finished_at_utc": "2026-10-24T12:20:28.479656+00:00",
+      "exit_code": 0,
+      "log": "evidence/demo-scope-violation.log",
+      "status": "PASS"
+    },
+    {
+      "name": "demo-invalid-transition",
+      "command": [
+        "node",
+        "dist/src/cli/index.js",
+        "invalid-transition"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:28.480067+00:00",
+      "finished_at_utc": "2026-10-24T12:20:28.645910+00:00",
+      "exit_code": 0,
+      "log": "evidence/demo-invalid-transition.log",
+      "status": "PASS"
+    },
+    {
+      "name": "dependency-audit",
+      "command": [
+        "npm",
+        "audit",
+        "--json"
+      ],
+      "cwd": "prototype/ados-local",
+      "started_at_utc": "2026-10-24T12:20:17.355165+00:00",
+      "finished_at_utc": "2026-10-24T12:20:23.871698+00:00",
+      "exit_code": 0,
+      "log": "evidence/dependency-audit.json",
+      "status": "PASS",
+      "vulnerable_packages": 0,
+      "audit_scope": "production and development dependencies; registry-known advisories at execution time"
+    }
+  ],
+  "not_run": [
+    "Windows x64 binary validation",
+    "Chrome/HKCU Native Host registration and pipes",
+    "live Codex compiler/executor",
+    "live GitHub publication/reconciliation",
+    "real-product Dogfood"
+  ],
+  "remote_writes": false,
+  "private_history_imported": false,
+  "revision_date_local": "2026-10-24",
+  "timezone": "Australia/Sydney",
+  "dependency_change": {
+    "package": "fast-uri",
+    "from": "3.1.5",
+    "to": "3.1.9",
+    "parent": "ajv@8.20.0",
+    "allowed_range": "^3.0.1",
+    "changed_file": "package-lock.json",
+    "changed_fields": [
+      "version",
+      "resolved",
+      "integrity"
+    ],
+    "other_packages_changed": 0,
+    "package_json_changed": false,
+    "prototype_source_tests_bindings_changed": false
+  },
+  "prior_audit": {
+    "candidate": "d8c3aa80db39cbdcae9bc23cc5440142ff16db54",
+    "exit_code": 1,
+    "package": "fast-uri@3.1.5",
+    "highest_severity": "high",
+    "advisory_entries": 10,
+    "current_status": "RESOLVED_BY_APPROVED_PATCH_UPGRADE"
+  }
+}

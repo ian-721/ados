@@ -1,0 +1,17 @@
+{
+  "checked_at": "2026-10-24T11:54:37.110Z",
+  "method": "Read-only connected GitHub branch and repository metadata",
+  "repositories": [
+    {
+      "repository": "ian-721/ados-local",
+      "main": "38a70a666ac620450757cff14e8b568a88587e1c",
+      "visibility": "private"
+    },
+    {
+      "repository": "ian-721/ados",
+      "main": "8bf7ad17bf812a9f29de15bc88e7b4c3cd208e21",
+      "visibility": "public"
+    }
+  ],
+  "remote_writes_performed": false
+}

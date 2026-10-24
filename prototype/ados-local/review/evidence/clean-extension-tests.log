@@ -1,0 +1,136 @@
+(node:452) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+TAP version 13
+# (node:459) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: capture routes accept only direct and gizmo/project conversation paths
+ok 1 - capture routes accept only direct and gizmo/project conversation paths
+  ---
+  duration_ms: 2.023359
+  type: 'test'
+  ...
+# Subtest: route acceptance and canonical conversation identity share one parse result
+ok 2 - route acceptance and canonical conversation identity share one parse result
+  ---
+  duration_ms: 6.286611
+  type: 'test'
+  ...
+# Subtest: versioned DOM contract accepts only explicit Owner and assistant evidence
+ok 3 - versioned DOM contract accepts only explicit Owner and assistant evidence
+  ---
+  duration_ms: 0.857858
+  type: 'test'
+  ...
+# Subtest: real-structure equivalent capture is realm-neutral and excludes non-message UI
+ok 4 - real-structure equivalent capture is realm-neutral and excludes non-message UI
+  ---
+  duration_ms: 4.862292
+  type: 'test'
+  ...
+# Subtest: unclassified DOM failures return a precise fail-closed blocker
+ok 5 - unclassified DOM failures return a precise fail-closed blocker
+  ---
+  duration_ms: 1.416687
+  type: 'test'
+  ...
+# Subtest: missing and additional route segments fail closed without a derivable ref
+ok 6 - missing and additional route segments fail closed without a derivable ref
+  ---
+  duration_ms: 0.895305
+  type: 'test'
+  ...
+# Subtest: query, hash, account hints, and project state do not enter durable conversation identity
+ok 7 - query, hash, account hints, and project state do not enter durable conversation identity
+  ---
+  duration_ms: 3.651013
+  type: 'test'
+  ...
+# Subtest: CAPTURE_PROFILE_PING listener is ready even on a non-conversation ChatGPT route
+ok 8 - CAPTURE_PROFILE_PING listener is ready even on a non-conversation ChatGPT route
+  ---
+  duration_ms: 0.97203
+  type: 'test'
+  ...
+# Subtest: capture route fails closed after listener readiness
+ok 9 - capture route fails closed after listener readiness
+  ---
+  duration_ms: 2.44395
+  type: 'test'
+  ...
+# Subtest: profile and page bindings fail with exact mismatch codes
+ok 10 - profile and page bindings fail with exact mismatch codes
+  ---
+  duration_ms: 0.909927
+  type: 'test'
+  ...
+# Subtest: active-tab binding detects tab id and route drift
+ok 11 - active-tab binding detects tab id and route drift
+  ---
+  duration_ms: 0.738459
+  type: 'test'
+  ...
+# (node:460) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: native callback timeouts are request-kind aware and bounded
+ok 12 - native callback timeouts are request-kind aware and bounded
+  ---
+  duration_ms: 2.239093
+  type: 'test'
+  ...
+# Subtest: Side Panel startup rehydrates the sole durable Card without Capture, Compiler, JIT, or confirm
+ok 13 - Side Panel startup rehydrates the sole durable Card without Capture, Compiler, JIT, or confirm
+  ---
+  duration_ms: 0.376215
+  type: 'test'
+  ...
+# Subtest: NO_CANDIDATE restoration permits one new capture while keeping confirmation disabled
+ok 14 - NO_CANDIDATE restoration permits one new capture while keeping confirmation disabled
+  ---
+  duration_ms: 4.556333
+  type: 'test'
+  ...
+# Subtest: successful READY Card restoration prevents unintended recapture
+ok 15 - successful READY Card restoration prevents unintended recapture
+  ---
+  duration_ms: 1.45156
+  type: 'test'
+  ...
+# Subtest: restored unbound Card cannot confirm and permits a replacement capture
+ok 16 - restored unbound Card cannot confirm and permits a replacement capture
+  ---
+  duration_ms: 1.162786
+  type: 'test'
+  ...
+# Subtest: one visible confirmation click performs prepare-confirm before confirm without Capture or Compiler
+ok 17 - one visible confirmation click performs prepare-confirm before confirm without Capture or Compiler
+  ---
+  duration_ms: 0.229184
+  type: 'test'
+  ...
+# Subtest: native callback success settles and clears its timeout
+ok 18 - native callback success settles and clears its timeout
+  ---
+  duration_ms: 1.156717
+  type: 'test'
+  ...
+# Subtest: missing Chrome callback fails closed and ignores a late callback
+ok 19 - missing Chrome callback fails closed and ignores a late callback
+  ---
+  duration_ms: 0.97218
+  type: 'test'
+  ...
+# Subtest: Chrome runtime errors are sanitized instead of exposing raw text
+ok 20 - Chrome runtime errors are sanitized instead of exposing raw text
+  ---
+  duration_ms: 1.11205
+  type: 'test'
+  ...
+1..20
+# tests 20
+# suites 0
+# pass 20
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 98.856672

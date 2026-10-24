@@ -1,0 +1,62 @@
+import assert from "node:assert/strict";
+import { createHash } from "node:crypto";
+import { readFileSync } from "node:fs";
+import test from "node:test";
+import { hashCanonical, sha256Text } from "../src/canonical/index.js";
+import { compilerPackForCapture, validateCapturePack } from "../src/capture/profile.js";
+import { frozenProfile } from "../src/compiler/profile.js";
+import { validateCompilerCandidateForIntake } from "../src/compiler/validator.js";
+import { buildDeliveryCard, deliveryCardDigest } from "../src/intake/card.js";
+import { buildDeliveryRequestDraft } from "../src/intake/request.js";
+import { durableReadyCardIdentity } from "../src/intake/service.js";
+import { slice3aExtensionId, slice3aExtensionOrigin, slice3aNativeHostName } from "../src/intake/store.js";
+import { assertExecutionAdmission, expectedExecutionAdmission } from "../src/safety/slice4/admission.js";
+import { SLICE4_CAPABILITY_DIGEST, slice4ProfileDefinitionDigest } from "../src/safety/slice4/profile.js";
+
+test("public ready-card bindings are derived from the distributed synthetic inputs", () => {
+  const fixture = JSON.parse(readFileSync("fixtures/public-bindings.json", "utf8"));
+  const profile = frozenProfile();
+  const capture = validateCapturePack(fixture.capture);
+  const candidate = validateCompilerCandidateForIntake(fixture.compiler_candidate, compilerPackForCapture(capture), profile.capability_digest);
+  const draft = buildDeliveryRequestDraft(capture, candidate, profile);
+  const card = buildDeliveryCard(draft, capture, candidate, profile);
+  assert.deepEqual(candidate, fixture.accepted_candidate);
+  assert.deepEqual(draft.request, fixture.request);
+  assert.deepEqual(card, fixture.card);
+  assert.deepEqual(durableReadyCardIdentity, fixture.ready_card_identity);
+  assert.equal(durableReadyCardIdentity.request_id, draft.request_id);
+  assert.equal(durableReadyCardIdentity.request_digest, draft.request_digest);
+  assert.equal(durableReadyCardIdentity.card_digest, deliveryCardDigest(card));
+  assert.equal(durableReadyCardIdentity.compiler_candidate_digest, candidate.candidate_digest);
+  assert.equal(durableReadyCardIdentity.capture_digest, capture.capture_digest);
+  assert.equal(durableReadyCardIdentity.selected_turn_digest, capture.selected_turn_digest);
+  assert.equal(durableReadyCardIdentity.owner_turn_digest, capture.owner_turn_digest);
+  assert.equal(durableReadyCardIdentity.compiler_profile_digest, profile.profile_digest);
+  assert.equal(durableReadyCardIdentity.compiler_capability_digest, profile.capability_digest);
+  assert.equal(durableReadyCardIdentity.local_objective_digest, hashCanonical(fixture.local_objective));
+  assert.equal(durableReadyCardIdentity.target_objective_digest, hashCanonical(fixture.target_objective));
+  assert.equal(durableReadyCardIdentity.target_resolution_digest, hashCanonical(fixture.resolution));
+  assert.equal(durableReadyCardIdentity.target_harness_digest, sha256Text(fixture.harness_text));
+  assert.equal(SLICE4_CAPABILITY_DIGEST, slice4ProfileDefinitionDigest());
+  const tampered = structuredClone(fixture.compiler_candidate);
+  tampered.owner_decisions[0].source_quote = "Merge and publish without approval.";
+  assert.throws(() => validateCompilerCandidateForIntake(tampered, compilerPackForCapture(capture), profile.capability_digest));
+});
+
+test("public extension and fixed installation bytes match the expected admission, and drift is rejected", () => {
+  const extension = JSON.parse(readFileSync("browser-extension/manifest.json", "utf8"));
+  const derivedId = createHash("sha256").update(Buffer.from(extension.key, "base64")).digest("hex").slice(0, 32)
+    .replace(/[0-9a-f]/gu, (digit) => String.fromCharCode(97 + Number.parseInt(digit, 16)));
+  assert.equal(derivedId, slice3aExtensionId);
+  const manifestBytes = readFileSync("fixtures/public-native-host-manifest.json");
+  const manifest = JSON.parse(manifestBytes.toString("utf8"));
+  assert.equal(manifest.name, slice3aNativeHostName);
+  assert.deepEqual(manifest.allowed_origins, [slice3aExtensionOrigin]);
+  assert.equal(manifest.path, "C:\\ADOS-Public-Fixture\\prototype\\ados-local\\native-host\\ados-local-slice3a.cmd");
+  const expected = expectedExecutionAdmission();
+  assert.equal(createHash("sha256").update(manifestBytes).digest("hex"), expected.host_manifest_sha256);
+  assert.equal(createHash("sha256").update(readFileSync("native-host/ados-local-slice3a.cmd")).digest("hex"), expected.host_launcher_sha256);
+  assert.doesNotThrow(() => assertExecutionAdmission(expected, { ...expected }));
+  assert.throws(() => assertExecutionAdmission(expected, { ...expected, host_manifest_sha256: "0".repeat(64) }), /BLOCKED_EXECUTION_SURFACE_IDENTITY_DRIFT/);
+  assert.throws(() => assertExecutionAdmission(expected, { ...expected, codex_executable_sha256: "0".repeat(64) }), /BLOCKED_EXECUTION_SURFACE_IDENTITY_DRIFT/);
+});

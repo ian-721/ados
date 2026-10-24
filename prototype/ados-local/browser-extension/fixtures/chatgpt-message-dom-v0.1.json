@@ -1,0 +1,66 @@
+{
+  "schema_version": "chatgpt-message-dom-fixture/v0.1",
+  "contract_version": "chatgpt-message-dom/v0.1",
+  "accepted": [
+    {
+      "name": "owner-message",
+      "message_tag": "div",
+      "raw_role": "user",
+      "turn_tag": "section",
+      "turn_testid": "conversation-turn-17",
+      "expected_role": "owner"
+    },
+    {
+      "name": "assistant-message",
+      "message_tag": "div",
+      "raw_role": "assistant",
+      "turn_tag": "section",
+      "turn_testid": "conversation-turn-18",
+      "expected_role": "assistant"
+    }
+  ],
+  "rejected": [
+    {
+      "name": "turn-heading-outside-message",
+      "message_tag": "h4",
+      "raw_role": null,
+      "turn_tag": "section",
+      "turn_testid": "conversation-turn-17",
+      "expected_blocker": "MESSAGE_CONTAINER"
+    },
+    {
+      "name": "action-button",
+      "message_tag": "button",
+      "raw_role": null,
+      "turn_tag": "section",
+      "turn_testid": "conversation-turn-18",
+      "expected_blocker": "MESSAGE_CONTAINER"
+    },
+    {
+      "name": "unsupported-role",
+      "message_tag": "div",
+      "raw_role": "tool",
+      "turn_tag": "section",
+      "turn_testid": "conversation-turn-18",
+      "expected_blocker": "ROLE_EVIDENCE"
+    },
+    {
+      "name": "message-without-turn-container",
+      "message_tag": "div",
+      "raw_role": "user",
+      "turn_tag": null,
+      "turn_testid": null,
+      "expected_blocker": "MESSAGE_CONTAINER"
+    }
+  ],
+  "selection_structure": {
+    "owner_path": "div > div > div > div[data-message-author-role=user]",
+    "assistant_paths": [
+      "p > div > div > div[data-message-author-role=assistant]",
+      "strong > p > div > div > div[data-message-author-role=assistant]",
+      "li > ul > div > div > div[data-message-author-role=assistant]",
+      "code > p > div > div > div[data-message-author-role=assistant]"
+    ],
+    "non_message_path": "h4 > section[data-testid=conversation-turn-<index>]"
+  }
+}

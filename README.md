@@ -8,7 +8,7 @@
 
 ADOS is a local-first research and systems project for carrying AI work across sessions, interruptions and changing requirements. People decide the outcome, authorize consequential actions and accept the result. The surrounding system is designed to preserve those decisions, coordinate execution, support recovery and collect evidence—rather than leave everything in an agent's conversation.
 
-This is the **public home of Yanyang Zhao's ADOS design and reference code**. It contains the system rationale, architecture, research connections and a runnable Objective & Evidence Kit. The broader local execution prototype is not included; ADOS is not yet a production service.
+This is the **public home of Yanyang Zhao's ADOS design, reference kit and complete local prototype source**. It contains the system rationale, architecture, research connections and a runnable Objective & Evidence Kit. The [complete ADOS Local prototype source](prototype/ados-local/README.md) is published under `prototype/ados-local/` as an independent, sanitized source distribution. ADOS is not yet a production service.
 
 ## The problem: keeping work on track
 
@@ -65,7 +65,7 @@ A project-specific *Harness* supplies its commands, tests, constraints and evide
 | Component | Availability | What it establishes |
 | --- | --- | --- |
 | **Objective & Evidence Kit** | Code, schemas, fictional examples and tests in this repository | Selected record-format, transition and cross-record consistency checks. |
-| **ADOS Local** | Separate private research prototype; summarized here | Maintainer-accepted Windows-first synthetic-task work involving browser capture, a delivery compiler, SQLite event persistence, bounded execution and recovery. Not independently reproducible from this public kit. |
+| **ADOS Local** | [Complete prototype source](prototype/ados-local/README.md) | Coordinator, SQLite persistence, compiler, browser extension, Native Host, migrations and tests. Offline synthetic validation is reproducible; Windows/live integration and real-product Dogfood remain unverified for this distribution. |
 | **WSEOM** | [Public research agenda](https://doi.org/10.5281/zenodo.22992066) | Questions about the division of cognitive work, experience, verification and authority between models and surrounding systems. Not evidence that the entire ADOS product works. |
 | **Real-product deployment and broad continuity** | Not established | General cross-device/model recovery, production reliability, transferable experience and reduced human workload remain to be demonstrated. |
 

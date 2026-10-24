@@ -1,0 +1,11 @@
+.ados-local/
+dist/
+node_modules/
+.env
+.env.*
+*.db
+*.db-wal
+*.db-shm
+*.sqlite
+*.sqlite3
+*.log

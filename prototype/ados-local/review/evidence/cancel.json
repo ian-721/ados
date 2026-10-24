@@ -1,0 +1,1 @@
+{"command":"cancel","evidence":{"event_count":2,"lease_live":0,"rejection":"FENCING_REJECTED:run-demo-cancel","state":"CANCELLED"},"result":"PASS_CANCEL_TERMINAL","status":"PASS","summary":["CANCELLED disabled the lease and rejected later Agent mutation without a new Event."]}

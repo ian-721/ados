@@ -1,0 +1,6 @@
+(node:479) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS_CONTRACTS (PASS)
+9 vendored contract/schema snapshots verified against the pinned manifest.
+Delivery Request, Objective, Run Envelope, and Evidence fixtures passed strict schema and semantic validation.
+Structured evidence: .ados-local/evidence/verify-contracts.json

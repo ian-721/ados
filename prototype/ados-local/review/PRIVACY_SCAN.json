@@ -1,0 +1,49 @@
+{
+  "scope": "candidate source excluding generated data and review provenance metadata",
+  "patterns": [
+    "secret_prefix",
+    "private_key",
+    "user_path",
+    "old_binding",
+    "raw_approval"
+  ],
+  "limitations": "Pattern-based review is not proof of absence of all secrets or a security certification.",
+  "allowlisted_findings": [
+    {
+      "file": "package.json",
+      "line": 2,
+      "reason": "Original package name @ian-721/ados-local retained in package metadata (only the fast-uri lock entry was updated); public author/package provenance, not a task or device identity."
+    },
+    {
+      "file": "package-lock.json",
+      "line": 2,
+      "reason": "Original package name @ian-721/ados-local retained in package metadata (only the fast-uri lock entry was updated); public author/package provenance, not a task or device identity."
+    },
+    {
+      "file": "package-lock.json",
+      "line": 8,
+      "reason": "Original package name @ian-721/ados-local retained in package metadata (only the fast-uri lock entry was updated); public author/package provenance, not a task or device identity."
+    }
+  ],
+  "unexpected_findings": [],
+  "final_export_scan": {
+    "scope": "All tracked prototype files, including review metadata and synthetic logs",
+    "patterns": [
+      "GitHub credential prefixes",
+      "OpenAI key prefixes",
+      "PEM/OpenSSH private keys",
+      "JWT-shaped tokens",
+      "private Windows user paths",
+      "scratch/home/cache absolute paths"
+    ],
+    "unexpected_findings": [],
+    "original_binding_mapping_entries_checked": 34,
+    "mapping_allowlist": [
+      "Unchanged package name in package.json/package-lock and npm command logs",
+      "Source repository identity in review provenance",
+      "Original renamed Native Host template filename in source inventory and sanitized diff header"
+    ],
+    "limitations": "Mapping scan checks original strings longer than 12 characters; independent review covers shorter contextual constants. Source identities and excluded filenames are provenance, not active installation authority."
+  },
+  "revision_base": "d8c3aa80db39cbdcae9bc23cc5440142ff16db54"
+}

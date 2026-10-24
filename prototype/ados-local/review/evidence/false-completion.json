@@ -1,0 +1,1 @@
+{"command":"false-completion","evidence":{"done_transition":"INVALID_TRANSITION:EXECUTING:DONE","event_count":3,"state":"EXECUTING","t0_closure":"OBLIGATION_TRUST_REJECTED:engineering-core"},"result":"PASS_FALSE_COMPLETION_REJECTED","status":"PASS","summary":["A T0 Agent claim closed neither the T2 engineering obligation nor DONE, and rejection appended no Event."]}

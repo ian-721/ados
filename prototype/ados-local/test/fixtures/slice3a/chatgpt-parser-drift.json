@@ -1,0 +1,24 @@
+{
+  "schema_version": "chatgpt-capture-pack/v0.1",
+  "capture_profile_id": "capture.chatgpt.visible-selection",
+  "capture_profile_version": "0.1.1-public.1",
+  "page_origin": "https://chatgpt.com",
+  "conversation_ref": "chatgpt://conversation/direct/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "captured_at": "2026-08-04T05:30:00.000Z",
+  "selected_turn_ids": ["turn-unknown-0001"],
+  "turns": [
+    {
+      "turn_id": "turn-unknown-0001",
+      "order": 0,
+      "role": "unknown",
+      "text": "The page no longer exposes an attributable message role.",
+      "role_proof": {
+        "selector": "section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"user\"], section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"assistant\"]",
+        "raw_role": "user",
+        "quoted": false,
+        "visible": true
+      }
+    }
+  ],
+  "retention": "local_raw_until_submit"
+}

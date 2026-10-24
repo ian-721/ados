@@ -2,7 +2,7 @@
 
 [Home](../README.md) · [Design](DESIGN.md) · [Reference kit](CONTRACT_KIT.md)
 
-Snapshot: **24 October 2026**. This page describes this public source release and the broader project's maturity. It is not a live task ledger.
+Snapshot: **25 October 2026**. This page describes this public source release and the broader project's maturity. It is not a live task ledger.
 
 ## Public and reproducible here
 
@@ -12,13 +12,13 @@ Run `python tools/ados.py demo` and `python -m unittest discover -s tests -v` fr
 
 The demo covers **14 expected outcomes**. The test suite covers valid and invalid records, transitions, binding, CLI behavior and three explicit trust limitations. See [the captured demonstration](DEMO.md).
 
-## Separate local prototype
+## Published complete local prototype source
 
-The broader ADOS Local prototype is private and Windows-first. The maintainer's accepted synthetic-task work includes browser-to-local capture, a delivery compiler, SQLite event persistence, bounded coding-agent execution, GitHub objective/evidence links, and selected interruption, cancellation and recovery checks.
+The [ADOS Local directory](../prototype/ados-local/README.md) contains the published complete implementation source in an independent sanitized distribution: coordinator, compiler, SQLite migrations, browser extension, Native Host, adapters and tests. Private Git history, real task/approval records, credentials, device identities and runtime data are excluded.
 
-This is a **maintainer-reported prototype status**, not independently reproducible evidence provided by this public repository. No private source tree, execution logs, approval records, credentials or user data are included. The public code does not install the browser extension, coordinator or local runtime.
+The Owner reviewed and approved candidate `75f5c44a5aa2cd894bd6c62c2efab547255f136d` for public distribution on 25 October 2026. Publication changes only the four English/Chinese entry READMEs and this STATUS page; the verified implementation, permissions and `fast-uri@3.1.9` lockfile are unchanged.
 
-Acceptance of the bounded synthetic safety path establishes neither a complete product nor a successful real-product dogfood. The latter remains unproven in the evidence reviewed for this publication.
+The offline synthetic checks are reproducible. The [pre-publication review report](../prototype/ados-local/review/OWNER_REVIEW.md), inventories and captured demo output remain unchanged historical records of the accepted candidate, including their earlier OWNER_REVIEW status. Their hashes identify that candidate; the five publication-status document edits are recorded in Git history. The recorded clean run passed type checking and build, 86 main tests with 8 Windows skips, 20 extension tests, safety negatives and an audit reporting zero known vulnerabilities at validation time. Earlier maintainer acceptance of a Windows synthetic path is historical context, not a new result for the public binding versions. The Windows/Chrome/Codex/Forge end-to-end path and real-product Dogfood remain unverified. Public source approval does not claim production readiness or completion of a real-product Dogfood.
 
 ## Designed or unproven—not shipped here
 

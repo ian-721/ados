@@ -1,0 +1,60 @@
+{
+  "name": "@ian-721/ados-local",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Windows-first local ADOS contract walking skeleton",
+  "type": "module",
+  "engines": {
+    "node": ">=22.23.0 <22.24.0",
+    "npm": ">=10.9.0 <11"
+  },
+  "scripts": {
+    "clean": "node --eval \"require('node:fs').rmSync('dist', { recursive: true, force: true })\"",
+    "typecheck": "tsc --noEmit",
+    "build": "npm run clean --silent && tsc",
+    "test": "npm run build --silent && node --test \"dist/test/*.test.js\"",
+    "check": "npm run build --silent && node dist/src/cli/index.js check",
+    "verify:contracts": "npm run build --silent && node dist/src/cli/index.js verify-contracts",
+    "verify:storage": "npm run build --silent && node dist/src/cli/index.js verify-storage",
+    "reports": "npm run build --silent && node dist/src/evidence/reports.js",
+    "demo:gate0s": "npm run build --silent && node dist/src/cli/index.js gate0s",
+    "demo:walking-skeleton": "npm run build --silent && node dist/src/cli/index.js walking-skeleton",
+    "demo:gate0a": "npm run build --silent && node dist/src/cli/index.js gate0a",
+    "demo:gate0a-card": "npm run build --silent && node dist/src/cli/index.js gate0a-card",
+    "demo:gate0b": "npm run build --silent && node dist/src/cli/index.js gate0b",
+    "demo:duplicate": "npm run build --silent && node dist/src/cli/index.js duplicate",
+    "demo:crash-recovery": "npm run build --silent && node dist/src/cli/index.js crash-recovery",
+    "demo:forged-approval": "npm run build --silent && node dist/src/cli/index.js forged-approval",
+    "demo:false-completion": "npm run build --silent && node dist/src/cli/index.js false-completion",
+    "demo:cancel": "npm run build --silent && node dist/src/cli/index.js cancel",
+    "demo:scope-violation": "npm run build --silent && node dist/src/cli/index.js scope-violation",
+    "demo:invalid-transition": "npm run build --silent && node dist/src/cli/index.js invalid-transition",
+    "demo:storage-integrity": "npm run build --silent && node dist/src/cli/index.js storage-integrity",
+    "demo:storage-rebuild": "npm run build --silent && node dist/src/cli/index.js storage-rebuild",
+    "demo:storage-backup-restore": "npm run build --silent && node dist/src/cli/index.js storage-backup-restore",
+    "demo:slice2": "npm run build --silent && node dist/src/cli/index.js slice2-fulfillment",
+    "demo:slice2-evidence-correction": "npm run build --silent && node dist/src/cli/index.js slice2-evidence-correction",
+    "demo:slice2-recovery": "npm run build --silent && node dist/src/cli/index.js slice2-recovery",
+    "native:slice3a-register": "npm run build --silent && powershell.exe -NoProfile -File scripts/register-native-host.ps1",
+    "native:slice3a-unregister": "powershell.exe -NoProfile -File scripts/unregister-native-host.ps1",
+    "verify:slice3a": "npm run build --silent && node --test dist/test/slice3a.test.js",
+    "demo:slice3a-readback": "npm run build --silent && node dist/src/cli/index.js slice3a-readback",
+    "verify:slice3b": "npm run build --silent && node --test dist/test/slice3b.test.js",
+    "demo:slice3b-status": "npm run build --silent && node dist/src/cli/index.js slice3b-status",
+    "demo:slice3b-dispatch": "npm run build --silent && node dist/src/cli/index.js slice3b-dispatch",
+    "demo:slice3b-resume": "npm run build --silent && node dist/src/cli/index.js slice3b-resume",
+    "verify:slice4": "npm run build --silent && node --test dist/test/slice4.test.js",
+    "demo:slice4-safety-card": "npm run build --silent && node dist/src/cli/index.js slice4-safety-card"
+  },
+  "dependencies": {
+    "ajv": "8.20.0",
+    "ajv-formats": "3.0.1",
+    "better-sqlite3": "12.11.1",
+    "canonicalize": "3.0.0"
+  },
+  "devDependencies": {
+    "@types/better-sqlite3": "9.6.0",
+    "@types/node": "22.20.1",
+    "typescript": "6.0.3"
+  }
+}

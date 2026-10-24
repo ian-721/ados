@@ -1,0 +1,30 @@
+{
+  "node": {
+    "version": "22.23.1",
+    "archive_url": "https://nodejs.org/dist/v22.23.1/node-v22.23.1-linux-x64.tar.xz",
+    "checksums_url": "https://nodejs.org/dist/v22.23.1/SHASUMS256.txt",
+    "archive_sha256": "9749e988f437343b7fa832c69ded82a312e41a03116d766797ac14f6f9eee578",
+    "matches_official_checksum_file": true,
+    "executable_sha256": "93956de2e59480474a7b46571da1651180b1a050cdf32641ebec4ce6e478e068"
+  },
+  "sqlite_prebuild": {
+    "url": "https://github.com/WiseLibs/better-sqlite3/releases/download/v12.11.1/better-sqlite3-v12.11.1-node-v127-linux-x64.tar.gz",
+    "archive_sha256": "94ce113ea2d9347fcd1cf8e46445cc271d1dbd02d05a64aa460442222f023b11",
+    "installed_addon_sha256": "df9fbd0d061f360d81fb51e265c53c9605020bd68219e34f33c07c85de15719a",
+    "installed_bytes_match_downloaded_prebuild": true,
+    "local_native_compilation": false,
+    "download_log_scope": "Initial runtime provisioning before d8c3aa8; the clean revision install reuses the identical official cached prebuild."
+  },
+  "limitations": "SHA values identify the actual downloaded Linux artifacts. They do not replace the frozen Windows admission hash or constitute a signature/reproducible-build attestation.",
+  "fast_uri": {
+    "version": "3.1.9",
+    "tarball": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.9.tgz",
+    "integrity": "sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==",
+    "license": "BSD-3-Clause",
+    "npm_ci_integrity_check_exit_code": 0,
+    "installed_package_version": "3.1.9",
+    "registry_metadata_query": "npm view fast-uri@3.1.9 version dist dependencies engines license --json",
+    "only_lock_entry_changed": true,
+    "installed_dependencies_match_lock": 49
+  }
+}
