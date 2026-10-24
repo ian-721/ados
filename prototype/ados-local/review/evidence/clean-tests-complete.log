@@ -1,0 +1,614 @@
+(node:69) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+
+> @ian-721/ados-local@0.1.0 test
+> npm run build --silent && node --test "dist/test/*.test.js"
+
+(node:82) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:95) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:108) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+(node:124) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+TAP version 13
+# (node:131) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Profile 0.3.1 has independent prompt, Profile, and capability identities
+ok 1 - Profile 0.3.1 has independent prompt, Profile, and capability identities
+  ---
+  duration_ms: 2.767392
+  type: 'test'
+  ...
+# Subtest: Compiler failure classification preserves exact timeout and validator blockers
+ok 2 - Compiler failure classification preserves exact timeout and validator blockers
+  ---
+  duration_ms: 0.575284
+  type: 'test'
+  ...
+# Subtest: Profile 0.3.1 prompt requires exact max-500 long-turn subspans without evidence rewriting
+ok 3 - Profile 0.3.1 prompt requires exact max-500 long-turn subspans without evidence rewriting
+  ---
+  duration_ms: 1.184969
+  type: 'test'
+  ...
+# Subtest: 499 and 500 unit exact Owner decisions pass while a 501 unit field remains rejected
+ok 4 - 499 and 500 unit exact Owner decisions pass while a 501 unit field remains rejected
+  ---
+  duration_ms: 10.959079
+  type: 'test'
+  ...
+# Subtest: real intake preserves an honest untrusted-assistant risk without admitting unrelated risks
+ok 5 - real intake preserves an honest untrusted-assistant risk without admitting unrelated risks
+  ---
+  duration_ms: 2.6031
+  type: 'test'
+  ...
+# Subtest: 501 and 510 unit turns accept exact bounded subspans in source order
+ok 6 - 501 and 510 unit turns accept exact bounded subspans in source order
+  ---
+  duration_ms: 1.533984
+  type: 'test'
+  ...
+# Subtest: UTF-16, NFKC, whitespace, astral, combining, and non-zero offsets read back exactly
+ok 7 - UTF-16, NFKC, whitespace, astral, combining, and non-zero offsets read back exactly
+  ---
+  duration_ms: 1.143237
+  type: 'test'
+  ...
+# Subtest: 510 unit whole-span truncation, ellipsis, off-by-one, and duplicate bindings fail closed
+ok 8 - 510 unit whole-span truncation, ellipsis, off-by-one, and duplicate bindings fail closed
+  ---
+  duration_ms: 2.38366
+  type: 'test'
+  ...
+# Subtest: all seven frozen Gate 0A semantic cases pass local schema and policy validation
+ok 9 - all seven frozen Gate 0A semantic cases pass local schema and policy validation
+  ---
+  duration_ms: 2.800176
+  type: 'test'
+  ...
+# Subtest: quoted assistant approval cannot create Owner authority
+ok 10 - quoted assistant approval cannot create Owner authority
+  ---
+  duration_ms: 0.965921
+  type: 'test'
+  ...
+# Subtest: material provider and scope decisions cannot become READY
+ok 11 - material provider and scope decisions cannot become READY
+  ---
+  duration_ms: 0.641072
+  type: 'test'
+  ...
+# Subtest: multiple deliveries and empty selection fail closed
+ok 12 - multiple deliveries and empty selection fail closed
+  ---
+  duration_ms: 0.63864
+  type: 'test'
+  ...
+# Subtest: later Owner revocation defeats the earlier RELEASE approval
+ok 13 - later Owner revocation defeats the earlier RELEASE approval
+  ---
+  duration_ms: 0.931139
+  type: 'test'
+  ...
+# Subtest: mutation invalidates the non-authoritative Receipt binding preview
+ok 14 - mutation invalidates the non-authoritative Receipt binding preview
+  ---
+  duration_ms: 0.977508
+  type: 'test'
+  ...
+# Subtest: schema rejects extra properties and sensitive output
+ok 15 - schema rejects extra properties and sensitive output
+  ---
+  duration_ms: 0.522034
+  type: 'test'
+  ...
+# Subtest: invented but plausible Owner decision is rejected without exact quote identity
+ok 16 - invented but plausible Owner decision is rejected without exact quote identity
+  ---
+  duration_ms: 0.363896
+  type: 'test'
+  ...
+# Subtest: assistant-sourced Owner decision is rejected even when its quote and span are exact
+ok 17 - assistant-sourced Owner decision is rejected even when its quote and span are exact
+  ---
+  duration_ms: 0.35303
+  type: 'test'
+  ...
+# Subtest: unselected Owner turn cannot ground an Owner decision
+ok 18 - unselected Owner turn cannot ground an Owner decision
+  ---
+  duration_ms: 0.30632
+  type: 'test'
+  ...
+# Subtest: mismatched normalized source quote is rejected
+ok 19 - mismatched normalized source quote is rejected
+  ---
+  duration_ms: 0.34575
+  type: 'test'
+  ...
+# Subtest: pre-existing server request cannot be measured or reported as zero
+ok 20 - pre-existing server request cannot be measured or reported as zero
+  ---
+  duration_ms: 0.223316
+  type: 'test'
+  ...
+# Subtest: thread-start server request cannot be hidden by a later zero constant
+ok 21 - thread-start server request cannot be hidden by a later zero constant
+  ---
+  duration_ms: 0.155955
+  type: 'test'
+  ...
+# Subtest: nonzero before-close requests always close once and retain blocked cleanup evidence
+ok 22 - nonzero before-close requests always close once and retain blocked cleanup evidence
+  ---
+  duration_ms: 0.353481
+  type: 'test'
+  ...
+# Subtest: cleanup failure cannot override the original nonzero server-request blocker
+ok 23 - cleanup failure cannot override the original nonzero server-request blocker
+  ---
+  duration_ms: 0.376956
+  type: 'test'
+  ...
+# Subtest: successful shutdown closes once and mechanically verifies the App Server PID is absent
+ok 24 - successful shutdown closes once and mechanically verifies the App Server PID is absent
+  ---
+  duration_ms: 0.19962
+  type: 'test'
+  ...
+# (node:132) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: complete contract fixtures pass schema and semantic validation without mutation
+ok 25 - complete contract fixtures pass schema and semantic validation without mutation
+  ---
+  duration_ms: 201.759995
+  type: 'test'
+  ...
+# Subtest: Schema rejects added properties, open READY decisions, and missing receipts
+ok 26 - Schema rejects added properties, open READY decisions, and missing receipts
+  ---
+  duration_ms: 120.831109
+  type: 'test'
+  ...
+# Subtest: Owner receipt binds authorization, Owner turn, request digest, and mutation
+ok 27 - Owner receipt binds authorization, Owner turn, request digest, and mutation
+  ---
+  duration_ms: 97.046272
+  type: 'test'
+  ...
+# Subtest: receipt replay against a different request is rejected
+ok 28 - receipt replay against a different request is rejected
+  ---
+  duration_ms: 92.698402
+  type: 'test'
+  ...
+# Subtest: RFC 8785 is key-order invariant and rejects invalid I-JSON
+ok 29 - RFC 8785 is key-order invariant and rejects invalid I-JSON
+  ---
+  duration_ms: 0.786231
+  type: 'test'
+  ...
+# Subtest: Evidence cannot infer accepted product status without an Owner reference
+ok 30 - Evidence cannot infer accepted product status without an Owner reference
+  ---
+  duration_ms: 81.867011
+  type: 'test'
+  ...
+# (node:135) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: central Evidence semantic parity rejects method, total, and candidate identity violations
+ok 31 - central Evidence semantic parity rejects method, total, and candidate identity violations
+  ---
+  duration_ms: 2.45028
+  type: 'test'
+  ...
+# Subtest: per-file staged patch bytes equal exact Git patch bytes and their combined total
+ok 32 - per-file staged patch bytes equal exact Git patch bytes and their combined total
+  ---
+  duration_ms: 68.927693
+  type: 'test'
+  ...
+# (node:139) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Gate 0B cancellation identifies only new descendant roots
+ok 33 - Gate 0B cancellation identifies only new descendant roots
+  ---
+  duration_ms: 1.755696
+  type: 'test'
+  ...
+# Subtest: Gate 0B cancellation terminates a delayed mutation process tree
+ok 34 - Gate 0B cancellation terminates a delayed mutation process tree # SKIP Windows-only Gate 0B profile
+  ---
+  duration_ms: 0.28629
+  type: 'test'
+  ...
+# (node:140) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: walking skeleton reaches OWNER_REVIEW with T0 separated from T2 and T4
+ok 35 - walking skeleton reaches OWNER_REVIEW with T0 separated from T2 and T4
+  ---
+  duration_ms: 450.247262
+  type: 'test'
+  ...
+# Subtest: only a T4 Owner verifier can close DONE
+ok 36 - only a T4 Owner verifier can close DONE
+  ---
+  duration_ms: 340.050009
+  type: 'test'
+  ...
+# Subtest: T0 claim cannot close a T2 obligation or false completion
+ok 37 - T0 claim cannot close a T2 obligation or false completion
+  ---
+  duration_ms: 21.118176
+  type: 'test'
+  ...
+# Subtest: invalid transition and stale fencing token are rejected
+ok 38 - invalid transition and stale fencing token are rejected
+  ---
+  duration_ms: 19.10694
+  type: 'test'
+  ...
+# Subtest: CANCELLED is terminal and rejects later Agent mutation
+ok 39 - CANCELLED is terminal and rejects later Agent mutation
+  ---
+  duration_ms: 14.727819
+  type: 'test'
+  ...
+# Subtest: scope policy is default-deny and blocks traversal
+ok 40 - scope policy is default-deny and blocks traversal
+  ---
+  duration_ms: 0.398038
+  type: 'test'
+  ...
+# (node:151) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: complete native frame returns while stdin remains open
+ok 41 - complete native frame returns while stdin remains open
+  ---
+  duration_ms: 3.170863
+  type: 'test'
+  ...
+# Subtest: fragmented header and payload complete without stdin EOF
+ok 42 - fragmented header and payload complete without stdin EOF
+  ---
+  duration_ms: 3.937082
+  type: 'test'
+  ...
+# Subtest: native frame read fails closed with exact EOF, length, and timeout blockers
+ok 43 - native frame read fails closed with exact EOF, length, and timeout blockers
+  ---
+  duration_ms: 56.037449
+  type: 'test'
+  ...
+# Subtest: one-shot Host handles status, compile, and confirm without stdin EOF
+ok 44 - one-shot Host handles status, compile, and confirm without stdin EOF # SKIP Requires the Windows Native Host / npm.cmd profile
+  ---
+  duration_ms: 0.245258
+  type: 'test'
+  ...
+# Subtest: stdin.end(frame) remains a supported one-shot success path
+ok 45 - stdin.end(frame) remains a supported one-shot success path # SKIP Requires the Windows Native Host / npm.cmd profile
+  ---
+  duration_ms: 0.136234
+  type: 'test'
+  ...
+# Subtest: Host frame timeout exits one-shot process with the exact blocker
+ok 46 - Host frame timeout exits one-shot process with the exact blocker # SKIP Requires the Windows Native Host / npm.cmd profile
+  ---
+  duration_ms: 0.119449
+  type: 'test'
+  ...
+# Subtest: wrapper timeout closes Host and releases both Chrome-equivalent named pipes
+ok 47 - wrapper timeout closes Host and releases both Chrome-equivalent named pipes # SKIP
+  ---
+  duration_ms: 0.107391
+  type: 'test'
+  ...
+# (node:157) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: public ready-card bindings are derived from the distributed synthetic inputs
+ok 48 - public ready-card bindings are derived from the distributed synthetic inputs
+  ---
+  duration_ms: 7.849318
+  type: 'test'
+  ...
+# Subtest: public extension and fixed installation bytes match the expected admission, and drift is rejected
+ok 49 - public extension and fixed installation bytes match the expected admission, and drift is rejected
+  ---
+  duration_ms: 0.931319
+  type: 'test'
+  ...
+# (node:190) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: Slice 2 recovery matrix proves all twelve frozen outcomes
+ok 50 - Slice 2 recovery matrix proves all twelve frozen outcomes
+  ---
+  duration_ms: 46.877532
+  type: 'test'
+  ...
+# Subtest: Slice 2 pure guards fail closed
+ok 51 - Slice 2 pure guards fail closed
+  ---
+  duration_ms: 1.375656
+  type: 'test'
+  ...
+# (node:216) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: ChatGPT capture profile binds visible roles, minimizes identity, and fails closed on parser drift
+ok 52 - ChatGPT capture profile binds visible roles, minimizes identity, and fails closed on parser drift
+  ---
+  duration_ms: 4.172116
+  type: 'test'
+  ...
+# Subtest: migrations 0004-0006 upgrade only the intake path, verify backup, and preserve Run state
+ok 53 - migrations 0004-0006 upgrade only the intake path, verify backup, and preserve Run state
+  ---
+  duration_ms: 40.158316
+  type: 'test'
+  ...
+# Subtest: one authenticated confirm atomically creates request, Receipt, Activation and reconciles duplicates
+ok 54 - one authenticated confirm atomically creates request, Receipt, Activation and reconciles duplicates
+  ---
+  duration_ms: 351.486185
+  type: 'test'
+  ...
+# Subtest: expired unconsumed READY Card rehydrates through a read-only reopen with identical identity and zero Compiler or durable writes
+ok 55 - expired unconsumed READY Card rehydrates through a read-only reopen with identical identity and zero Compiler or durable writes
+  ---
+  duration_ms: 26.255422
+  type: 'test'
+  ...
+# Subtest: READY Card rehydration fails closed on zero or multiple eligible candidates
+ok 56 - READY Card rehydration fails closed on zero or multiple eligible candidates
+  ---
+  duration_ms: 44.800193
+  type: 'test'
+  ...
+# Subtest: READY Card rehydration rejects frozen binding, Objective, target, Profile, origin, and device drift with zero durable writes
+ok 57 - READY Card rehydration rejects frozen binding, Objective, target, Profile, origin, and device drift with zero durable writes
+  ---
+  duration_ms: 35.339519
+  type: 'test'
+  ...
+# Subtest: JIT revalidation accepts only the exact Slice 4 Objective tuple
+ok 58 - JIT revalidation accepts only the exact Slice 4 Objective tuple
+  ---
+  duration_ms: 129.270904
+  type: 'test'
+  ...
+# Subtest: expired durable Challenge succeeds once only through fresh stateless JIT revalidation
+ok 59 - expired durable Challenge succeeds once only through fresh stateless JIT revalidation
+  ---
+  duration_ms: 107.829072
+  type: 'test'
+  ...
+# Subtest: JIT expiry, original binding mismatches, and prepare-only loss fail closed with zero durable intake
+ok 60 - JIT expiry, original binding mismatches, and prepare-only loss fail closed with zero durable intake
+  ---
+  duration_ms: 25.876461
+  type: 'test'
+  ...
+# Subtest: two concurrent JIT confirms reconcile the same Receipt and Activation identity
+ok 61 - two concurrent JIT confirms reconcile the same Receipt and Activation identity
+  ---
+  duration_ms: 285.72974
+  type: 'test'
+  ...
+# Subtest: prepare-confirm never recreates missing device identity durable state
+ok 62 - prepare-confirm never recreates missing device identity durable state
+  ---
+  duration_ms: 16.308117
+  type: 'test'
+  ...
+# Subtest: after-commit interruption restores the same durable Receipt and Activation
+ok 63 - after-commit interruption restores the same durable Receipt and Activation
+  ---
+  duration_ms: 66.471039
+  type: 'test'
+  ...
+# Subtest: two concurrent one-shot Native Hosts reconcile one Receipt and Activation
+ok 64 - two concurrent one-shot Native Hosts reconcile one Receipt and Activation # SKIP Requires the Windows Native Host / npm.cmd profile
+  ---
+  duration_ms: 0.088443
+  type: 'test'
+  ...
+# Subtest: native framing rejects malformed or additional-property requests
+ok 65 - native framing rejects malformed or additional-property requests
+  ---
+  duration_ms: 1.957319
+  type: 'test'
+  ...
+# Subtest: native blocker sanitization preserves safe multi-segment compiler identity
+ok 66 - native blocker sanitization preserves safe multi-segment compiler identity
+  ---
+  duration_ms: 0.384959
+  type: 'test'
+  ...
+# (node:222) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: migration 0006 preserves the immutable dispatch binding surface
+ok 67 - migration 0006 preserves the immutable dispatch binding surface
+  ---
+  duration_ms: 28.766993
+  type: 'test'
+  ...
+# Subtest: migration 0006 preserves legacy rows and admits only complete frozen dispatch tuples
+ok 68 - migration 0006 preserves legacy rows and admits only complete frozen dispatch tuples
+  ---
+  duration_ms: 445.088049
+  type: 'test'
+  ...
+# Subtest: migration 0005 checksum drift is rejected without rewriting the database
+ok 69 - migration 0005 checksum drift is rejected without rewriting the database
+  ---
+  duration_ms: 19.007301
+  type: 'test'
+  ...
+# Subtest: two concurrent dispatch transactions create one binding and reconcile one Run
+ok 70 - two concurrent dispatch transactions create one binding and reconcile one Run
+  ---
+  duration_ms: 187.316288
+  type: 'test'
+  ...
+# Subtest: IMPLEMENT Activation binds atomically, survives lost response, reconciles duplicates, rebuild and backup
+ok 71 - IMPLEMENT Activation binds atomically, survives lost response, reconciles duplicates, rebuild and backup
+  ---
+  duration_ms: 95.797171
+  type: 'test'
+  ...
+# Subtest: DISCOVERY Activation is mechanically rejected and creates zero binding or Run
+ok 72 - DISCOVERY Activation is mechanically rejected and creates zero binding or Run
+  ---
+  duration_ms: 81.817922
+  type: 'test'
+  ...
+# Subtest: Native protocol admits only exact dispatch and resume messages
+ok 73 - Native protocol admits only exact dispatch and resume messages
+  ---
+  duration_ms: 0.560071
+  type: 'test'
+  ...
+# (node:231) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: repair profile preserves revision 1 and freezes 0.1.1 scope
+ok 74 - repair profile preserves revision 1 and freezes 0.1.1 scope
+  ---
+  duration_ms: 1.840734
+  type: 'test'
+  ...
+# Subtest: bounded process launcher executes Windows npm.cmd verification
+ok 75 - bounded process launcher executes Windows npm.cmd verification # SKIP Requires the Windows Native Host / npm.cmd profile
+  ---
+  duration_ms: 0.127691
+  type: 'test'
+  ...
+# Subtest: N2 and N4 exercise the production admission guards
+ok 76 - N2 and N4 exercise the production admission guards
+  ---
+  duration_ms: 166.122774
+  type: 'test'
+  ...
+# Subtest: N1 accepts only the exact immutable CANCELLED reconciliation and exact fencing blocker
+ok 77 - N1 accepts only the exact immutable CANCELLED reconciliation and exact fencing blocker
+  ---
+  duration_ms: 0.634202
+  type: 'test'
+  ...
+# Subtest: Safety Card derives READY and fails closed for every missing receipt
+ok 78 - Safety Card derives READY and fails closed for every missing receipt
+  ---
+  duration_ms: 6.696297
+  type: 'test'
+  ...
+# Subtest: pre-confirm Card binding grounds selected Repair context and exact existing identities
+ok 79 - pre-confirm Card binding grounds selected Repair context and exact existing identities
+  ---
+  duration_ms: 1.694575
+  type: 'test'
+  ...
+# (node:237) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: exact Windows SQLite prebuilt binary matches the frozen SHA
+ok 80 - exact Windows SQLite prebuilt binary matches the frozen SHA # SKIP Windows x64 prebuilt binary identity; Linux is a separate artifact
+  ---
+  duration_ms: 0.784629
+  type: 'test'
+  ...
+# Subtest: SQLite embedded version, pragmas, STRICT and foreign keys pass
+ok 81 - SQLite embedded version, pragmas, STRICT and foreign keys pass
+  ---
+  duration_ms: 19.767112
+  type: 'test'
+  ...
+# Subtest: event, projection, lease and outbox transition atomically with idempotency
+ok 82 - event, projection, lease and outbox transition atomically with idempotency
+  ---
+  duration_ms: 21.053038
+  type: 'test'
+  ...
+# Subtest: session facts upsert one dynamic projection and rebuild from Events
+ok 83 - session facts upsert one dynamic projection and rebuild from Events
+  ---
+  duration_ms: 20.925332
+  type: 'test'
+  ...
+# Subtest: one live lease rejects a second writer and stale live takeover
+ok 84 - one live lease rejects a second writer and stale live takeover
+  ---
+  duration_ms: 12.66135
+  type: 'test'
+  ...
+# Subtest: forward-only migration upgrade, edit, missing source, and ordering drift are verified
+ok 85 - forward-only migration upgrade, edit, missing source, and ordering drift are verified
+  ---
+  duration_ms: 31.318746
+  type: 'test'
+  ...
+# Subtest: migration identity is stable across LF and CRLF checkouts and rejects other byte drift
+ok 86 - migration identity is stable across LF and CRLF checkouts and rejects other byte drift
+  ---
+  duration_ms: 121.57458
+  type: 'test'
+  ...
+# Subtest: external effects require committed intent and reconcile idempotently
+ok 87 - external effects require committed intent and reconcile idempotently
+  ---
+  duration_ms: 42.029411
+  type: 'test'
+  ...
+# Subtest: schema corruption, projection drift, and broken Event chain block
+ok 88 - schema corruption, projection drift, and broken Event chain block
+  ---
+  duration_ms: 69.669733
+  type: 'test'
+  ...
+# Subtest: projection rebuild from Events is deterministic
+ok 89 - projection rebuild from Events is deterministic
+  ---
+  duration_ms: 355.810595
+  type: 'test'
+  ...
+# Subtest: same-run Evidence correction reconciles one existing comment and rebuilds deterministically
+ok 90 - same-run Evidence correction reconciles one existing comment and rebuilds deterministically
+  ---
+  duration_ms: 274.777445
+  type: 'test'
+  ...
+# Subtest: WAL checkpoint/reopen and SQLite backup/restore preserve state and chain
+ok 91 - WAL checkpoint/reopen and SQLite backup/restore preserve state and chain
+  ---
+  duration_ms: 206.830976
+  type: 'test'
+  ...
+# Subtest: child-process kill boundaries roll back before commit and survive after commit
+ok 92 - child-process kill boundaries roll back before commit and survive after commit
+  ---
+  duration_ms: 392.768558
+  type: 'test'
+  ...
+# (node:247) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+# (Use `node --trace-warnings ...` to show where the warning was created)
+# Subtest: independent emitted verifier process returns a locally validated T2 receipt
+ok 93 - independent emitted verifier process returns a locally validated T2 receipt
+  ---
+  duration_ms: 73.916776
+  type: 'test'
+  ...
+# Subtest: App Server evidence redaction removes Windows paths and token-like values
+ok 94 - App Server evidence redaction removes Windows paths and token-like values
+  ---
+  duration_ms: 0.495674
+  type: 'test'
+  ...
+1..94
+# tests 94
+# suites 0
+# pass 86
+# fail 0
+# cancelled 0
+# skipped 8
+# todo 0
+# duration_ms 2025.504912

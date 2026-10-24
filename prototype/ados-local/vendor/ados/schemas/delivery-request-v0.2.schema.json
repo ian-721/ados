@@ -1,0 +1,136 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ados.dev/schemas/delivery-request-v0.2.schema.json",
+  "title": "ADOS Delivery Request v0.2",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "request_id",
+    "captured_at",
+    "capture",
+    "compiler",
+    "outcome",
+    "why_now",
+    "owner_decisions",
+    "assumptions",
+    "open_decisions",
+    "requested_authorization",
+    "target_hint",
+    "allowed_scope_hints",
+    "forbidden_scope_hints",
+    "quality_bar",
+    "acceptance",
+    "risk_flags",
+    "readiness",
+    "request_digest"
+  ],
+  "properties": {
+    "schema_version": {"const": "ados-delivery-request/v0.2"},
+    "request_id": {"type": "string", "pattern": "^dr-[A-Za-z0-9][A-Za-z0-9._-]{7,127}$"},
+    "captured_at": {"type": "string", "format": "date-time"},
+    "capture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["adapter_id", "adapter_version", "platform", "conversation_ref", "selected_turn_digest", "owner_turn_digest", "role_summary", "retention"],
+      "properties": {
+        "adapter_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "adapter_version": {"type": "string", "minLength": 1, "maxLength": 64},
+        "platform": {"type": "string", "minLength": 1, "maxLength": 64},
+        "conversation_ref": {"type": ["string", "null"], "maxLength": 2048},
+        "selected_turn_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "owner_turn_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "role_summary": {
+          "type": "array",
+          "minItems": 1,
+          "items": {
+            "type": "object",
+            "additionalProperties": false,
+            "required": ["role", "count"],
+            "properties": {
+              "role": {"enum": ["owner", "assistant", "tool", "quoted_external", "unknown"]},
+              "count": {"type": "integer", "minimum": 1}
+            }
+          }
+        },
+        "retention": {"enum": ["local_raw_until_submit", "local_raw_until_completion", "minimized_only"]}
+      }
+    },
+    "compiler": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["compiler_version", "rules_version", "profile_id", "profile_version", "capability_digest", "model_ref"],
+      "properties": {
+        "compiler_version": {"type": "string", "minLength": 1, "maxLength": 64},
+        "rules_version": {"type": "string", "minLength": 1, "maxLength": 64},
+        "profile_id": {"type": "string", "minLength": 1, "maxLength": 128},
+        "profile_version": {"type": "string", "minLength": 1, "maxLength": 64},
+        "capability_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "model_ref": {"type": ["string", "null"], "maxLength": 256}
+      }
+    },
+    "outcome": {"type": "string", "minLength": 20, "maxLength": 4000},
+    "why_now": {"type": "string", "minLength": 10, "maxLength": 4000},
+    "owner_decisions": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 2000}, "uniqueItems": true},
+    "assumptions": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 2000}, "uniqueItems": true},
+    "open_decisions": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 2000}, "uniqueItems": true},
+    "requested_authorization": {"enum": ["DISCOVERY", "PLAN", "IMPLEMENT", "MERGE", "RELEASE"]},
+    "target_hint": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["delivery_class", "project_id", "repository"],
+      "properties": {
+        "delivery_class": {"enum": ["software_delivery", "research", "document", "data", "operations", "unknown"]},
+        "project_id": {"type": ["string", "null"], "maxLength": 128},
+        "repository": {"type": ["string", "null"], "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+$"}
+      }
+    },
+    "allowed_scope_hints": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 1000}, "uniqueItems": true},
+    "forbidden_scope_hints": {"type": "array", "items": {"type": "string", "minLength": 1, "maxLength": 1000}, "uniqueItems": true},
+    "quality_bar": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 2000}},
+    "acceptance": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["engineering", "product", "owner_artifact"],
+      "properties": {
+        "engineering": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 2000}},
+        "product": {"type": "array", "minItems": 1, "items": {"type": "string", "minLength": 1, "maxLength": 2000}},
+        "owner_artifact": {
+          "type": "object",
+          "additionalProperties": false,
+          "required": ["kind", "description"],
+          "properties": {
+            "kind": {"type": "string", "minLength": 1, "maxLength": 64},
+            "description": {"type": "string", "minLength": 10, "maxLength": 2000}
+          }
+        }
+      }
+    },
+    "risk_flags": {"type": "array", "uniqueItems": true, "items": {"enum": ["architecture_change", "new_dependency", "new_service", "external_purchase", "credential_access", "production_mutation", "sensitive_data", "irreversible_action", "legal_or_compliance", "multi_repository", "protocol_change", "unknown"]}},
+    "readiness": {"enum": ["READY", "READY_WITH_ASSUMPTIONS", "NEEDS_OWNER_DECISION", "REJECTED"]},
+    "request_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+    "owner_authorization_receipt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["receipt_id", "actor_id", "authn_method", "action", "authorization", "approval_ref", "owner_turn_digest", "request_digest", "approved_at"],
+      "properties": {
+        "receipt_id": {"type": "string", "pattern": "^oar-[A-Za-z0-9][A-Za-z0-9._-]{7,127}$"},
+        "actor_id": {"type": "string", "minLength": 1, "maxLength": 256},
+        "authn_method": {"enum": ["local_extension_confirm", "os_user_presence", "platform_signed", "external_owner_record"]},
+        "action": {"const": "approve_delivery"},
+        "authorization": {"enum": ["DISCOVERY", "PLAN", "IMPLEMENT", "MERGE", "RELEASE"]},
+        "approval_ref": {"type": "string", "minLength": 8, "maxLength": 2048},
+        "owner_turn_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "request_digest": {"type": "string", "pattern": "^sha256:[a-f0-9]{64}$"},
+        "approved_at": {"type": "string", "format": "date-time"}
+      }
+    }
+  },
+  "allOf": [
+    {"if": {"properties": {"readiness": {"enum": ["READY", "READY_WITH_ASSUMPTIONS"]}}}, "then": {"required": ["owner_authorization_receipt"]}},
+    {"if": {"properties": {"readiness": {"const": "READY"}}}, "then": {"properties": {"open_decisions": {"maxItems": 0}}}},
+    {"if": {"properties": {"readiness": {"const": "READY_WITH_ASSUMPTIONS"}}}, "then": {"properties": {"assumptions": {"minItems": 1}, "open_decisions": {"maxItems": 0}}}},
+    {"if": {"properties": {"readiness": {"const": "NEEDS_OWNER_DECISION"}}}, "then": {"properties": {"open_decisions": {"minItems": 1}}}},
+    {"if": {"properties": {"readiness": {"enum": ["NEEDS_OWNER_DECISION", "REJECTED"]}}}, "then": {"not": {"required": ["owner_authorization_receipt"]}}}
+  ]
+}

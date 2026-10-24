@@ -1,0 +1,2842 @@
+--- fixed-source/browser-extension/capture-profile.js
++++ public-copy/browser-extension/capture-profile.js
+@@ -10,7 +10,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    version: "0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/browser-extension/capture-profile.test.js
++++ public-copy/browser-extension/capture-profile.test.js
+@@ -11,7 +11,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++const extensionId = "fpmliiakgebgdlgaddocgddllidmkomd";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -198,8 +198,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    "/c/00000000-0000-4000-8000-000000000001",
++    "/g/g-p-00000000000000000000000000000001-owner-project/c/conversation-1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -246,7 +246,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(profile.definition.version, "0.1.1-public.1");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -273,7 +273,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(response.capture.capture_profile_version, "0.1.1-public.1");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -355,7 +355,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(response.binding.capture_profile_version, "0.1.1-public.1");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/browser-extension/manifest.json
++++ public-copy/browser-extension/manifest.json
+@@ -1,9 +1,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  "name": "ADOS Local Public Fixture",
++  "version": "0.1.1",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  "key": "MIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8AMIIBCgKCAQEArDlOb0/d7EJ6yr1H3QiF/bmBq/7ZU30GLYlyZ1DstlyC0WI9DwMGFzxFVsh+eRPddyzhg57eGb4YN4SfhxH+a8+VPB4J+cJN9qHcRmppAjIbkv/J+0WSr1Nax8RiAFXTNEtmIeZ5M8FpK+wBtuqCekl+RPlfqN2toZ5xw6BQ1+HNWfgKyLa8c1j9eSW7zp6Jt73nDdx1240EXiXjfFGskPMAcNd42g/8b3u8mPJiJ+P3ElPQEmhKGkdE8CmhSK4bCBCO/ETS8a6ouURI1O1NCUzvxgjbibfLVGKm5WQU/y2YViByQrIDpfcJHfftPF5j3+R6hj67bGaz8WnWSDxsdwIDAQAB",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/browser-extension/native-message.test.js
++++ public-copy/browser-extension/native-message.test.js
+@@ -79,7 +79,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      runtime: { id: "fpmliiakgebgdlgaddocgddllidmkomd" },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -117,7 +117,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    owner_decisions: [{ decision: "Approve IMPLEMENT for this synthetic fixture only; do not merge, release or deploy." }],
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -126,21 +126,21 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        source_quote: "This synthetic repair fixture requires a separate IMPLEMENT decision before any repair Run, candidate revision or evidence update.",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++        objective_ref: "fixture.invalid/ados-local#11",
++        draft_pr: "fixture.invalid/ados-local#12",
++        revision_1_sha: "6bfbb7b8b74bad18144c97d439260a98e11384f3",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++        objective_ref: "fixture.invalid/ados-fixture-delivery#5",
++        draft_pr: "fixture.invalid/ados-fixture-delivery#6",
++        revision_1_sha: "710bd4c9e1ba5912219ba401e205e9cec91268d4",
++      },
++      evidence_comment: "fixture.invalid/ados-fixture-delivery#6:issuecomment-1000001",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      execution_profile: "safety.fixture-dogfood-gate@0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -150,7 +150,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    capture_profile: "capture.chatgpt.visible-selection@0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/browser-extension/side-panel.js
++++ public-copy/browser-extension/side-panel.js
+@@ -1,4 +1,4 @@
+-[source line omitted: inspect authorized fixed source locally]
++const HOST = "org.ados.public_fixture.slice3a";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -46,16 +46,16 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      "This synthetic repair fixture requires a separate IMPLEMENT decision before any repair Run, candidate revision or evidence update." &&
++    binding?.local?.objective_ref === "fixture.invalid/ados-local#11" &&
++    binding?.local?.draft_pr === "fixture.invalid/ados-local#12" &&
++    binding?.local?.revision_1_sha === "6bfbb7b8b74bad18144c97d439260a98e11384f3" &&
++    binding?.fixture?.objective_ref === "fixture.invalid/ados-fixture-delivery#5" &&
++    binding?.fixture?.draft_pr === "fixture.invalid/ados-fixture-delivery#6" &&
++    binding?.fixture?.revision_1_sha === "710bd4c9e1ba5912219ba401e205e9cec91268d4" &&
++    binding?.evidence_comment === "fixture.invalid/ados-fixture-delivery#6:issuecomment-1000001" &&
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    binding?.execution_profile === "safety.fixture-dogfood-gate@0.1.1-public.1" &&
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -146,7 +146,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  if (typeof value === "string" && /^https:\/\/github\.com\/fixture\.invalid\/ados-fixture-delivery\/pull\/\d+(?:#.*)?$/u.test(value)) {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/docs/THREAT_MODEL.md
++++ public-copy/docs/THREAT_MODEL.md
+@@ -26,4 +26,4 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++The source implements the controls listed above. This public candidate verifies a bounded offline subset using synthetic inputs and real local storage/verification processes; see ../review/OWNER_REVIEW.md for measured coverage. It does not establish a new live Forge/Windows/Chrome/Codex integration, real-product Dogfood, general portability, production security, or Owner acceptance. Synthetic test inputs that contain PASS or approval fields are not evidence of those real-world events.
+--- fixed-source/fixtures/README.md
++++ public-copy/fixtures/README.md
+@@ -1,3 +1,7 @@
+-[source line omitted: inspect authorized fixed source locally]
++# Synthetic fixtures
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++Core record fixtures are constructed by `src/contracts/fixture-data.ts`; browser parser inputs are under `browser-extension/fixtures/` and `test/fixtures/`.
++
++`public-bindings.json` contains synthetic input records and derived default bindings. The public-binding tests reconstruct their request, card, candidate and project digests. It is not real approval or provider evidence; no device identity, signed token, credential or database is included.
++
++`public-native-host-manifest.json` is the exact expected installation fixture, not observed Windows registration evidence. The README explains the fixed layout and unverified integration boundaries.
+--- fixed-source/migrations/0004_delivery_intake.sql
++++ public-copy/migrations/0004_delivery_intake.sql
+@@ -1,7 +1,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  extension_origin TEXT NOT NULL CHECK (extension_origin = 'chrome-extension://fpmliiakgebgdlgaddocgddllidmkomd/'),
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/migrations/0005_activation_dispatch.sql
++++ public-copy/migrations/0005_activation_dispatch.sql
+@@ -5,18 +5,18 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  resolver_profile_version TEXT NOT NULL CHECK (resolver_profile_version = '0.1.0-public.1'),
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  repository_full_name TEXT NOT NULL CHECK (repository_full_name = 'fixture.invalid/ados-fixture-delivery'),
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  objective_ref TEXT NOT NULL CHECK (objective_ref = 'fixture.invalid/ados-fixture-delivery#3'),
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  project_harness_ref TEXT NOT NULL CHECK (project_harness_ref = 'fixture.invalid/ados-fixture-delivery@e75d162750acf4775a7a1ba1d1955ca9d60bc73f#docs/HARNESS.md'),
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  base_sha TEXT NOT NULL CHECK (base_sha = 'e75d162750acf4775a7a1ba1d1955ca9d60bc73f'),
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  execution_profile_version TEXT NOT NULL CHECK (execution_profile_version = '0.1.0-public.1'),
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/migrations/0006_slice4_dispatch_binding.sql
++++ public-copy/migrations/0006_slice4_dispatch_binding.sql
+@@ -8,7 +8,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  repository_full_name TEXT NOT NULL CHECK (repository_full_name = 'fixture.invalid/ados-fixture-delivery'),
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -24,23 +24,23 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      resolver_profile_version = '0.1.0-public.1'
++      AND resolver_capability_digest = 'sha256:88d6d6733713bd7c6af1971dbd84a3f6ca428efe560891cace3264ef229d7f4c'
++      AND objective_ref = 'fixture.invalid/ados-fixture-delivery#3'
++      AND project_harness_ref = 'fixture.invalid/ados-fixture-delivery@e75d162750acf4775a7a1ba1d1955ca9d60bc73f#docs/HARNESS.md'
++      AND base_sha = 'e75d162750acf4775a7a1ba1d1955ca9d60bc73f'
++      AND execution_profile_version = '0.1.0-public.1'
++      AND execution_capability_digest = 'sha256:bc904e3b85e49ea09c82deae06c6a4d46de92a38c97eb92b3093ea0523906ba5'
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      resolver_profile_version = '0.1.1-public.1'
++      AND resolver_capability_digest = 'sha256:030b43c80e90aa1add25d35f6ab212951539b14e4e12a6f58073c52508faaf05'
++      AND objective_ref = 'fixture.invalid/ados-fixture-delivery#5'
++      AND project_harness_ref = 'fixture.invalid/ados-fixture-delivery@4e772e775cbc843420c8580fcff8a85c92754bdd#docs/HARNESS.md'
++      AND base_sha = '4e772e775cbc843420c8580fcff8a85c92754bdd'
++      AND execution_profile_version = '0.1.0-slice4-repair-public.1'
++      AND execution_capability_digest = 'sha256:b055bbe3fa2aa44c6b069b85e13bdc8909ab0250ae991e4d7e387d5a46eea157'
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/native-host/com.ian721.ados_local.slice3a.template.json
++++ public-copy/native-host/org.ados.public_fixture.slice3a.template.json
+@@ -1,9 +1,9 @@
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  "name": "org.ados.public_fixture.slice3a",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "chrome-extension://fpmliiakgebgdlgaddocgddllidmkomd/"
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/package-lock.json
++++ public-copy/package-lock.json
+@@ -230,9 +230,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      "version": "3.1.9",
++      "resolved": "https://registry.npmjs.org/fast-uri/-/fast-uri-3.1.9.tgz",
++      "integrity": "sha512-hS/0Wt3Ya043oKXs0sIxrMpKQITXhMLIrVAKKXi4gozGC9v7YRWVnXIZzjNPTO02M9BdxLCWqK1yRXgNziVyJQ==",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/scripts/register-native-host.ps1
++++ public-copy/scripts/register-native-host.ps1
+@@ -2,8 +2,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++$hostName = 'org.ados.public_fixture.slice3a'
++$extensionOrigin = 'chrome-extension://fpmliiakgebgdlgaddocgddllidmkomd/'
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -25,14 +25,15 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++# This public fixture has a versioned, fixed installation identity. Loading the
++# checked-in expected bytes does not trust the currently installed registration.
++$expectedManifestPath = Join-Path $repoRoot 'fixtures\public-native-host-manifest.json'
++$manifestJson = [System.IO.File]::ReadAllText($expectedManifestPath)
++$manifest = $manifestJson | ConvertFrom-Json
++if ($manifest.path -cne $launcher -or $manifest.name -cne $hostName -or
++    @($manifest.allowed_origins).Count -ne 1 -or @($manifest.allowed_origins)[0] -cne $extensionOrigin) {
++  throw 'BLOCKED_NATIVE_HOST_REGISTRATION:PUBLIC_FIXTURE_LAYOUT_MISMATCH'
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -69,7 +70,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      [System.IO.File]::WriteAllText($manifestPath, $manifestJson, [System.Text.UTF8Encoding]::new($false))
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/scripts/unregister-native-host.ps1
++++ public-copy/scripts/unregister-native-host.ps1
+@@ -2,7 +2,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++$hostName = 'org.ados.public_fixture.slice3a'
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -28,7 +28,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      @($parsed.allowed_origins)[0] -ne 'chrome-extension://fpmliiakgebgdlgaddocgddllidmkomd/'
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/capture/types.ts
++++ public-copy/src/capture/types.ts
+@@ -1,6 +1,6 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  profile_version: "0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -30,7 +30,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly capture_profile_version: "0.1.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/compiler/profile.ts
++++ public-copy/src/compiler/profile.ts
+@@ -35,7 +35,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++const profileVersion = "0.3.1-public.1" as const;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/compiler/schema.ts
++++ public-copy/src/compiler/schema.ts
+@@ -30,7 +30,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: { type: "string", const: "0.3.1-public.1" },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/compiler/types.ts
++++ public-copy/src/compiler/types.ts
+@@ -58,7 +58,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly profile_version: "0.3.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -125,7 +125,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly profile_version: "0.3.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -176,7 +176,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly profile_version: "0.3.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/contracts/fixture-data.ts
++++ public-copy/src/contracts/fixture-data.ts
+@@ -5,7 +5,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++const bootstrapSha = "b85a8139cc6d98d7132c84e41a407bde94c813c9";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -18,7 +18,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      adapter_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -27,10 +27,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      compiler_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -43,7 +43,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      repository: "fixture.invalid/ados-local",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -83,12 +83,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    project_harness_ref: `fixture.invalid/ados-local@${bootstrapSha}#docs/HARNESS.md`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    sources: [{ kind: "commit", ref: `fixture.invalid/ados-local@${bootstrapSha}`, description: "Frozen bootstrap." }],
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -96,7 +96,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      location: "repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -121,24 +121,24 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      objective_ref: "fixture.invalid/ados-local#1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      repository_full_name: "fixture.invalid/ados-local",
++      repository_id: "10001",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      repository_path: "repository://fixture.invalid/ados-local",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -278,13 +278,13 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    inputs: [{ kind: "commit", ref: `fixture.invalid/ados-local@${bootstrapSha}`, description: "Bootstrap input." }],
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      location: "repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -310,6 +310,6 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    generator: { name: "ados-local-fixture", version: "0.1.0-public.1" },
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/coordinator/demos.ts
++++ public-copy/src/coordinator/demos.ts
+@@ -183,7 +183,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        "No real Objective is created or accepted; fixture T4 is not product acceptance.",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/coordinator/slice2-recovery.ts
++++ public-copy/src/coordinator/slice2-recovery.ts
+@@ -73,7 +73,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    objective_ref: "fixture.invalid/ados-fixture-delivery#1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -114,8 +114,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      repository_full_name: "fixture.invalid/ados-fixture-delivery",
++      base_sha: "3536f4810f9cfadc75443a838a26e969883fca44",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -191,7 +191,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    url: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -228,7 +228,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    () => assertFrozenBase("b".repeat(40), "3536f4810f9cfadc75443a838a26e969883fca44"),
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -237,7 +237,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    target_ref: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/coordinator/slice2.ts
++++ public-copy/src/coordinator/slice2.ts
+@@ -35,16 +35,16 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++const centralSha = "7b5c48b4cdacc3357816be0a17d704e88e05440a";
++const localBaseSha = "6cfbb20e86c151bcaea489fa8a6dd9a2d7706396";
++const fixtureBaseSha = "3536f4810f9cfadc75443a838a26e969883fca44";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++const runId = "run-public-slice2-summary-0001";
++const requestId = "dr-public-slice2-summary-0001";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++const approvalRef = "synthetic://ados-public/v1/slice2-approval";
++const initialEvidenceManifestDigest = "sha256:d7b0e5e1c8fa7d0ebc2fba6d130effeb390a036abf20797daa641ce79f886761";
++const evidenceCommentId = 1000004;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -123,7 +123,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      adapter_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -135,7 +135,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -151,7 +151,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      repository: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -339,18 +339,18 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      repository_full_name: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      repository_path: "repository://fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        (task.task_id === "fixture-dogfood-safety-v0.1" ? "0.1.0-slice4-pin-public.1" : "0.1.0-public.1"),
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -429,8 +429,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      { verifier_id: "verifier.forge-pr", kind: "forge", trusted_source_ref: "github://fixture.invalid/ados-fixture-delivery", independence: "external_system", trust_level: "T3" },
++      { verifier_id: "verifier.forge-evidence", kind: "evidence", trusted_source_ref: "github://fixture.invalid/ados-fixture-delivery", independence: "external_system", trust_level: "T3" },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -604,7 +604,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      { kind: "commit", ref: `fixture.invalid/ados-fixture-delivery@${task.base_sha}`, description: "Frozen fixture base." },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -627,7 +627,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      location: `repository://fixture.invalid/ados-fixture-delivery@${candidateSha}#README.md`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -642,7 +642,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      state_writeback_ref: `https://github.com/fixture.invalid/ados-fixture-delivery/issues/${task.objective_issue_number}`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -655,7 +655,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    generator: { name: `ados-local-${configuration.evidence_prefix}`, version: "0.1.0-public.1" },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -765,8 +765,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    const fixtureObjective = readRunningObjective(fixturePath, "fixture.invalid/ados-fixture-delivery", 1);
++    readRunningObjective(process.cwd(), "fixture.invalid/ados-local", 3);
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -1117,7 +1117,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      target_ref: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -1204,7 +1204,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        location: `repository://fixture.invalid/ados-fixture-delivery@${candidateSha}#README.md`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -1324,14 +1324,14 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const expectedCommentUrl = `https://github.com/fixture.invalid/ados-fixture-delivery/pull/2#issuecomment-${evidenceCommentId}`;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    existingResult.target_candidate_sha !== "805c36359ae777b892e7e8ca1b2154fecbe0ad3e" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    existingResult.target_pr_url !== "https://github.com/fixture.invalid/ados-fixture-delivery/pull/2" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/coordinator/slice3b.ts
++++ public-copy/src/coordinator/slice3b.ts
+@@ -29,8 +29,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++const localObjectiveRef = "fixture.invalid/ados-local#9";
++const localBaseSha = "eb908c7ad58846f0d35d5a9989555203435ffbc9";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -162,11 +162,11 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const local = readRunningObjective(process.cwd(), "fixture.invalid/ados-local", 9);
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    local.objective.objective_id !== "ados-public-slice3b-activation-v0.1" ||
++    local.objective.project_harness_ref !== `fixture.invalid/ados-local@${localBaseSha}#docs/HARNESS.md` ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -283,7 +283,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      execution_profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/coordinator/walking-skeleton.ts
++++ public-copy/src/coordinator/walking-skeleton.ts
+@@ -248,7 +248,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      location: "repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -349,7 +349,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      artifact_path: "repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/evidence/artifacts.ts
++++ public-copy/src/evidence/artifacts.ts
+@@ -34,7 +34,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "This candidate awaits Owner review; synthetic DONE does not accept any real Objective.",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/evidence/reports.ts
++++ public-copy/src/evidence/reports.ts
+@@ -3,10 +3,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++const bootstrapCommit = "b85a8139cc6d98d7132c84e41a407bde94c813c9";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++const ownerApproval = "synthetic://ados-public/v1/source-approval";
++const preflightEvidence = "fixture.invalid/ados-local#issuecomment-1000003";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/gates/gate0b.ts
++++ public-copy/src/gates/gate0b.ts
+@@ -544,7 +544,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/intake/service.ts
++++ public-copy/src/intake/service.ts
+@@ -60,23 +60,24 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
++// Derived from fixtures/public-bindings.json. This is a synthetic identity, not a live receipt.
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  "challenge_id": "challenge-6c4c8e85d18ae0df754215f3e2b767ac",
++  "selected_turn_digest": "sha256:0b0d145fe9ae74d179ac4875f7b225b2350bc19f7dc57ebc0aba1ba6c9774fd4",
++  "owner_turn_digest": "sha256:9db970c832091b69fcb2e7c92d60d4010ebe859c2b0fdb8a31eba5b336d19dd3",
++  "compiler_candidate_digest": "sha256:b5dcf7f61e7bd22d77e5fef292fba027778f5c05df997c473dcccfb232a92dc4",
++  "request_id": "dr-dd11fad04ee0623e4cc82232cd429205",
++  "request_digest": "sha256:e6c3fd17c3bc9e3f9400f78d8f9a4040eda03d0ef69066f98f185915d122be41",
++  "card_digest": "sha256:87957bdf1e831b5c4367dfc710e3e084e970e8fd8a059ab50a7bf0b2630c5201",
++  "capture_digest": "sha256:7b79a06a56a69ce71dd7020de301b36decbfc85a8377fda21ad4dcc577efef56",
++  "compiler_profile_id": "compiler.codex-app-server.gate0a-no-tools",
++  "compiler_profile_version": "0.3.1-public.1",
++  "compiler_profile_digest": "sha256:712be97b949b77c5f08b90d33d0b5bd3ffd65f22a440e2469ade45ea0a53f986",
++  "compiler_capability_digest": "sha256:eca12affed7f7e7f418f833fecab0eb74faec495651048ba2674696e4ca84d75",
++  "local_objective_digest": "sha256:febfa6143fe3e42102b5935978165291bda6a066f4f486231e01ad977f771eaa",
++  "target_objective_digest": "sha256:03858ec2629c12de0523ff47fa8f0ec44b9e4dde8e9ebcd2838bc7b0231e5319",
++  "target_resolution_digest": "sha256:5160ed789212ef6abd1a8d00691565168ae070a1d59fed7cd2ebba58e5518bb2",
++  "target_harness_digest": "sha256:13c28e03bdbee36042ace9618f057673503cc1dac96cf7884069f364831967bd"
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -94,7 +95,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "issue", "view", "9", "--repo", "fixture.invalid/ados-local", "--json", "body,state,url",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -134,18 +135,18 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    const local = readRunningObjective(process.cwd(), "fixture.invalid/ados-local", 9);
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      local.issue_ref !== "fixture.invalid/ados-local#9" ||
++      local.objective.objective_id !== "ados-public-slice3b-activation-v0.1" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        "fixture.invalid/ados-local@eb908c7ad58846f0d35d5a9989555203435ffbc9#docs/HARNESS.md" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -158,9 +159,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      profile.profile_version !== "0.3.1-public.1" ||
++      profile.profile_digest !== "sha256:712be97b949b77c5f08b90d33d0b5bd3ffd65f22a440e2469ade45ea0a53f986" ||
++      profile.capability_digest !== "sha256:eca12affed7f7e7f418f833fecab0eb74faec495651048ba2674696e4ca84d75" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -175,7 +176,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      local_objective_ref: "fixture.invalid/ados-local#9",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -194,12 +195,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      localObjective.objective_id !== "ados-public-slice3b-activation-v0.1" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        "fixture.invalid/ados-local@eb908c7ad58846f0d35d5a9989555203435ffbc9#docs/HARNESS.md" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -234,7 +235,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      local_objective_ref: "fixture.invalid/ados-local#9",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/intake/store.ts
++++ public-copy/src/intake/store.ts
+@@ -30,9 +30,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++export const slice3aExtensionId = "fpmliiakgebgdlgaddocgddllidmkomd";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++export const slice3aNativeHostName = "org.ados.public_fixture.slice3a";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -167,13 +167,13 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    value.local_objective_ref === "fixture.invalid/ados-local#9" &&
++    value.target_objective_ref === "fixture.invalid/ados-fixture-delivery#3" &&
++    value.target_base_sha === "e75d162750acf4775a7a1ba1d1955ca9d60bc73f"
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    value.local_objective_ref === "fixture.invalid/ados-local#11" &&
++    value.target_objective_ref === "fixture.invalid/ados-fixture-delivery#5" &&
++    value.target_base_sha === "4e772e775cbc843420c8580fcff8a85c92754bdd"
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -444,24 +444,24 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        "This synthetic repair fixture requires a separate IMPLEMENT decision before any repair Run, candidate revision or evidence update." &&
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++        "fixture.invalid/control@3f5801451f991226704f7b141ddbd6fbcb7e31ac#docs/ados-personal/implementation/SLICE4_REPAIR_AMENDMENT_PLAN_V0.1.md" &&
++      repairBinding.local.objective_ref === "fixture.invalid/ados-local#11" &&
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      repairBinding.local.draft_pr === "fixture.invalid/ados-local#12" &&
++      repairBinding.local.branch === "fixture/public-local-safety-v1" &&
++      repairBinding.local.revision_1_sha === "6bfbb7b8b74bad18144c97d439260a98e11384f3" &&
++      repairBinding.fixture.objective_ref === "fixture.invalid/ados-fixture-delivery#5" &&
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      repairBinding.fixture.draft_pr === "fixture.invalid/ados-fixture-delivery#6" &&
++      repairBinding.fixture.branch === "fixture/public-target-safety-v1" &&
++      repairBinding.fixture.revision_1_sha === "710bd4c9e1ba5912219ba401e205e9cec91268d4" &&
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        "fixture.invalid/ados-fixture-delivery#6:issuecomment-1000001" &&
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      repairBinding.execution_profile === "safety.fixture-dogfood-gate@0.1.1-public.1" &&
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/intake/types.ts
++++ public-copy/src/intake/types.ts
+@@ -46,15 +46,15 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly local_objective_ref: "fixture.invalid/ados-local#9" | "fixture.invalid/ados-local#11";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly target_objective_ref: "fixture.invalid/ados-fixture-delivery#3" | "fixture.invalid/ados-fixture-delivery#5";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    | "e75d162750acf4775a7a1ba1d1955ca9d60bc73f"
++    | "4e772e775cbc843420c8580fcff8a85c92754bdd";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -93,7 +93,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly compiler_profile_version: "0.3.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -124,23 +124,23 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      readonly objective_ref: "fixture.invalid/ados-local#11";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      readonly draft_pr: "fixture.invalid/ados-local#12";
++      readonly branch: "fixture/public-local-safety-v1";
++      readonly revision_1_sha: "6bfbb7b8b74bad18144c97d439260a98e11384f3";
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      readonly objective_ref: "fixture.invalid/ados-fixture-delivery#5";
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      readonly draft_pr: "fixture.invalid/ados-fixture-delivery#6";
++      readonly branch: "fixture/public-target-safety-v1";
++      readonly revision_1_sha: "710bd4c9e1ba5912219ba401e205e9cec91268d4";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly evidence_comment: "fixture.invalid/ados-fixture-delivery#6:issuecomment-1000001";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly execution_profile: "safety.fixture-dogfood-gate@0.1.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/profiles/app-server-client.ts
++++ public-copy/src/profiles/app-server-client.ts
+@@ -419,7 +419,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/profiles/codex-fixture-executor.ts
++++ public-copy/src/profiles/codex-fixture-executor.ts
+@@ -19,7 +19,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -34,7 +34,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: "0.1.0-slice4-pin-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/profiles/fixture-task.ts
++++ public-copy/src/profiles/fixture-task.ts
+@@ -1,15 +1,15 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly objective_ref: "fixture.invalid/ados-fixture-delivery#1" | "fixture.invalid/ados-fixture-delivery#3" | "fixture.invalid/ados-fixture-delivery#5";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    | "3536f4810f9cfadc75443a838a26e969883fca44"
++    | "e75d162750acf4775a7a1ba1d1955ca9d60bc73f"
++    | "4e772e775cbc843420c8580fcff8a85c92754bdd";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    | "fixture/public-target-safety-v1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -26,8 +26,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  objective_ref: "fixture.invalid/ados-fixture-delivery#1",
++  base_sha: "3536f4810f9cfadc75443a838a26e969883fca44",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -54,8 +54,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  objective_ref: "fixture.invalid/ados-fixture-delivery#3",
++  base_sha: "e75d162750acf4775a7a1ba1d1955ca9d60bc73f",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -82,9 +82,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  objective_ref: "fixture.invalid/ados-fixture-delivery#5",
++  base_sha: "4e772e775cbc843420c8580fcff8a85c92754bdd",
++  target_branch: "fixture/public-target-safety-v1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/profiles/forge-profile.ts
++++ public-copy/src/profiles/forge-profile.ts
+@@ -6,7 +6,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly full_name: "fixture.invalid/ados-fixture-delivery";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -144,10 +144,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const raw = runForge("gh", ["api", "repos/fixture.invalid/ados-fixture-delivery"], cwd);
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    String(value.full_name) !== "fixture.invalid/ados-fixture-delivery" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -156,7 +156,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    full_name: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -165,7 +165,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "repos/fixture.invalid/ados-fixture-delivery/commits/main",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -176,7 +176,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  repository: "fixture.invalid/ados-local" | "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -200,7 +200,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  repository: "fixture.invalid/ados-local" | "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -226,7 +226,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -242,7 +242,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      return parseObjectiveIssue("fixture.invalid/ados-fixture-delivery", issueNumber, issue);
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -321,7 +321,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readback_digest: hashCanonical({ repository: "fixture.invalid/ados-fixture-delivery", branch, sha: readback }),
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -355,7 +355,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -378,7 +378,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -428,28 +428,28 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  if (runGit(worktreePath, ["branch", "--show-current"]) !== "fixture/public-local-safety-v1") {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "pr", "view", "12", "--repo", "fixture.invalid/ados-local",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    pullRequest.headRefName !== "fixture/public-local-safety-v1" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    pullRequest.url !== "https://github.com/fixture.invalid/ados-local/pull/12"
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    url: "https://github.com/fixture.invalid/ados-local/pull/12",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -465,7 +465,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const endpoint = `repos/fixture.invalid/ados-fixture-delivery/issues/${pullRequestNumber}/comments`;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -492,7 +492,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    ["api", `repos/fixture.invalid/ados-fixture-delivery/issues/comments/${commentId}`],
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -525,11 +525,11 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  if (!Number.isSafeInteger(commentId) || commentId !== 1000004) {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const endpoint = `repos/fixture.invalid/ados-fixture-delivery/issues/${pullRequestNumber}/comments`;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -544,7 +544,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      `repos/fixture.invalid/ados-fixture-delivery/issues/comments/${commentId}`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -552,14 +552,14 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    ["api", `repos/fixture.invalid/ados-fixture-delivery/issues/comments/${commentId}`],
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    url !== `https://github.com/fixture.invalid/ados-fixture-delivery/pull/${pullRequestNumber}#issuecomment-${commentId}` ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -581,7 +581,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const expectedBranch = "fixture/public-target-safety-v1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -615,7 +615,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const branch = "fixture/public-target-safety-v1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -629,7 +629,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readback_digest: hashCanonical({ repository: "fixture.invalid/ados-fixture-delivery", branch, sha: readback }),
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -638,8 +638,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  const commentId = 1000001;
++  const identityKey = "ados-fixture-delivery:run-public-slice4-safety-0001:1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -651,7 +651,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const endpoint = `repos/fixture.invalid/ados-fixture-delivery/issues/comments/${commentId}`;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -665,7 +665,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    url !== `https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-${commentId}` ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/profiles/workspace-profile.ts
++++ public-copy/src/profiles/workspace-profile.ts
+@@ -12,7 +12,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly repository_full_name: "fixture.invalid/ados-fixture-delivery";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -170,7 +170,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    repository_full_name: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/resolver/fixture-single-running-objective.ts
++++ public-copy/src/resolver/fixture-single-running-objective.ts
+@@ -11,10 +11,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++export const FIXTURE_RESOLVER_VERSION = "0.1.0-public.1" as const;
++export const FIXTURE_REPOSITORY = "fixture.invalid/ados-fixture-delivery" as const;
++export const FIXTURE_OBJECTIVE_REF = "fixture.invalid/ados-fixture-delivery#3" as const;
++export const FIXTURE_BASE_SHA = "e75d162750acf4775a7a1ba1d1955ca9d60bc73f" as const;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/admission.ts
++++ public-copy/src/safety/slice4/admission.ts
+@@ -13,7 +13,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++export const SLICE4_HOST_MANIFEST_SHA256 = "6db377897a4b7361b9849a1d2341661c542a1ad3190e48f8d1879e673bfae0f8";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -23,7 +23,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly execution_profile_version: "0.1.0-slice4-repair-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -67,7 +67,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: "0.1.0-slice4-repair-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -93,7 +93,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    execution_profile_version: "0.1.0-slice4-repair-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -110,7 +110,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    execution_profile_version: "0.1.0-slice4-repair-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/card.ts
++++ public-copy/src/safety/slice4/card.ts
+@@ -10,12 +10,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++const revision1Local = "6bfbb7b8b74bad18144c97d439260a98e11384f3";
++const revision2Local = "c4b3be5327851f82712558fee8110a384eb37525";
++const revision1Fixture = "710bd4c9e1ba5912219ba401e205e9cec91268d4";
++const rejectedRun = "run-public-slice4-safety-0001";
++const evidenceMarker = "<!-- ados-evidence:ados-fixture-delivery:run-public-slice4-safety-0001:1 -->";
++const evidenceIdentity = "ados-fixture-delivery:run-public-slice4-safety-0001:1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -63,7 +63,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly profile: "safety.fixture-dogfood-gate@0.1.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -74,12 +74,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly blocker: "N1_CANCELLED_PROJECTION_DRIFT:FENCING_REJECTED:run-public-slice4-n1-cancel-0001";
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly run_id: "run-public-slice4-n1-cancel-0001" | null;
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly terminal_blocker: "FENCING_REJECTED:run-public-slice4-n1-cancel-0001" | null;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -102,13 +102,13 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly ados_local_pr: "fixture.invalid/ados-local#12";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    readonly fixture_pr: "fixture.invalid/ados-fixture-delivery#6";
++    readonly evidence_comment_id: 1000001;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -151,7 +151,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    corpus.local_pr_url !== "https://github.com/fixture.invalid/ados-local/pull/12"
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -181,12 +181,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    pr.length !== 1 || pr[0]?.status !== "CONFIRMED" || pr[0]?.result_ref !== "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    revision3Evidence[0]?.result_ref !== corpus.evidence_comment_url || corpus.evidence_comment_id !== 1000001
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -198,8 +198,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    n1.run_id !== "run-public-slice4-n1-cancel-0001" ||
++    n1.terminal_blocker !== "FENCING_REJECTED:run-public-slice4-n1-cancel-0001" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -249,12 +249,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      blocker: "N1_CANCELLED_PROJECTION_DRIFT:FENCING_REJECTED:run-public-slice4-n1-cancel-0001",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      run_id: n1?.run_id === "run-public-slice4-n1-cancel-0001" ? n1.run_id : null,
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      terminal_blocker: n1?.terminal_blocker === "FENCING_REJECTED:run-public-slice4-n1-cancel-0001"
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -279,13 +279,13 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      ados_local_pr: "fixture.invalid/ados-local#12",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      fixture_pr: "fixture.invalid/ados-fixture-delivery#6",
++      evidence_comment_id: 1000001,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/cases.ts
++++ public-copy/src/safety/slice4/cases.ts
+@@ -44,7 +44,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++export const SLICE4_N1_RUN_ID = "run-public-slice4-n1-cancel-0001";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -92,7 +92,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    objective_ref: "fixture.invalid/ados-local#11",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -100,9 +100,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    request_id: "request-public-slice4-n1-cancel-0001",
++    objective_id: "ados-public-slice4-safety-v0.1",
++    objective_ref: "fixture.invalid/ados-local#11",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/coordinator.ts
++++ public-copy/src/safety/slice4/coordinator.ts
+@@ -75,13 +75,13 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++const revision1Local = "6bfbb7b8b74bad18144c97d439260a98e11384f3";
++const revision2Local = "c4b3be5327851f82712558fee8110a384eb37525";
++const revision1Fixture = "710bd4c9e1ba5912219ba401e205e9cec91268d4";
++const evidenceCommentId = 1000001;
++const evidenceIdentity = "ados-fixture-delivery:run-public-slice4-safety-0001:1";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++const localObjectiveRef = "fixture.invalid/ados-local#11";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -115,8 +115,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly fixture_pr_url: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6";
++  readonly evidence_comment_id: 1000001;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -129,7 +129,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly objective_ref: "fixture.invalid/ados-fixture-delivery#5";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -151,8 +151,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly objective_ref: "fixture.invalid/ados-fixture-delivery#5" | null;
++  readonly target_branch: "fixture/public-target-safety-v1" | null;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -183,13 +183,13 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly pr_url: "https://github.com/fixture.invalid/ados-local/pull/12";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    runGit(path, ["branch", "--show-current"]) !== "fixture/public-local-safety-v1" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -199,7 +199,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    pr_url: pr.url as "https://github.com/fixture.invalid/ados-local/pull/12",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -223,12 +223,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  const local = readRunningObjective(process.cwd(), "fixture.invalid/ados-local", 11);
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    local.objective.objective_id !== "ados-public-slice4-safety-v0.1" ||
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      `fixture.invalid/ados-local@${SLICE4_LOCAL_BASE_SHA}#docs/HARNESS.md` ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -285,7 +285,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      execution_profile_version: "0.1.0-slice4-repair-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -338,7 +338,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      execution_profile_version: "0.1.0-slice4-repair-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -516,7 +516,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "- retained Run: `run-public-slice4-safety-0001`",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -664,7 +664,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    evidence_comment_url: `https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-${evidenceCommentId}`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -694,7 +694,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    objective_ref: "fixture.invalid/ados-fixture-delivery#5",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -777,7 +777,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      payload: { repository: "fixture.invalid/ados-fixture-delivery", branch: slice4FixtureTask.target_branch },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -786,7 +786,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        repository_full_name: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -802,7 +802,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        n1.run_id !== "run-public-slice4-n1-cancel-0001" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -843,7 +843,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        repository_full_name: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -868,7 +868,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        repository_full_name: "fixture.invalid/ados-fixture-delivery", base_sha: SLICE4_FIXTURE_BASE_SHA,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -911,19 +911,19 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      outbox_id: `${runId}:pr`, effect_kind: "DRAFT_PR", identity_key: "fixture.invalid/ados-fixture-delivery#6",
++      target_ref: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6", candidate_sha: candidateSha,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    if (pr.number !== 6 || pr.url !== "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6") throw new Error("BLOCKED_REPAIR_PR_IDENTITY_DRIFT");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      outbox_id: `${runId}:pr`, effect_kind: "DRAFT_PR", identity_key: "fixture.invalid/ados-fixture-delivery#6",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -957,14 +957,14 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        location: `repository://fixture.invalid/ados-local@${localRevision.candidate_sha}#docs/SLICE4_OWNER_DEMO.md`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      target_ref: `https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-${evidenceCommentId}`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -973,10 +973,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      target_ref: `https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-${evidenceCommentId}`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      result_ref: `https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-${evidenceCommentId}`,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -1013,7 +1013,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      repository_full_name: "fixture.invalid/ados-fixture-delivery", base_sha: SLICE4_FIXTURE_BASE_SHA,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -1039,7 +1039,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      fixture_pr_url: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -1079,8 +1079,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++        run_id: binding.run_id, objective_ref: "fixture.invalid/ados-fixture-delivery#5",
++        target_branch: "fixture/public-target-safety-v1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/intake.ts
++++ public-copy/src/safety/slice4/intake.ts
+@@ -29,27 +29,27 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    const local = readRunningObjective(process.cwd(), "fixture.invalid/ados-local", 11);
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        `fixture.invalid/control@${SLICE4_CENTRAL_SHA}#docs/ados-personal/implementation/SLICE4_REPAIR_AMENDMENT_PLAN_V0.1.md`);
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      local.issue_ref !== "fixture.invalid/ados-local#11" ||
++      local.objective.objective_id !== "ados-public-slice4-safety-v0.1" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        `fixture.invalid/ados-local@${SLICE4_LOCAL_BASE_SHA}#docs/HARNESS.md` ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        "synthetic://ados-public/v1/slice4-approval"
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -72,7 +72,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      local_objective_ref: "fixture.invalid/ados-local#11",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -86,16 +86,16 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  "This synthetic repair fixture requires a separate IMPLEMENT decision before any repair Run, candidate revision or evidence update.";
++export const SLICE4_REPAIR_OWNER_DECISION = "Approve IMPLEMENT for this synthetic fixture only; do not merge, release or deploy.";
++
++const localRevision1 = "6bfbb7b8b74bad18144c97d439260a98e11384f3" as const;
++const fixtureRevision1 = "710bd4c9e1ba5912219ba401e205e9cec91268d4" as const;
++const localBranch = "fixture/public-local-safety-v1" as const;
++const fixtureBranch = "fixture/public-target-safety-v1" as const;
++const evidenceComment = "fixture.invalid/ados-fixture-delivery#6:issuecomment-1000001" as const;
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  `fixture.invalid/control@${SLICE4_CENTRAL_SHA}#docs/ados-personal/implementation/SLICE4_REPAIR_AMENDMENT_PLAN_V0.1.md`;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -163,14 +163,14 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "api", "repos/fixture.invalid/ados-fixture-delivery/issues/comments/1000001",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    value.id !== 1000001 ||
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-1000001" ||
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    !value.body.includes("<!-- ados-evidence:ados-fixture-delivery:run-public-slice4-safety-0001:1 -->")
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -186,8 +186,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  exactPullRequest("fixture.invalid/ados-local", 12, localBranch, localRevision1);
++  exactPullRequest("fixture.invalid/ados-fixture-delivery", 6, fixtureBranch, fixtureRevision1);
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -241,7 +241,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    "Update Evidence comment 1000001 in place, derive READY|BLOCKED from evidence, then return Objectives #11/#5 to OWNER_REVIEW.",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -259,11 +259,11 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    repository: "fixture.invalid/ados-fixture-delivery",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    "Objectives: fixture.invalid/ados-local#11 and fixture.invalid/ados-fixture-delivery#5.",
++    "Draft PRs: fixture.invalid/ados-local#12 and fixture.invalid/ados-fixture-delivery#6 on their existing branches.",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -304,23 +304,23 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        objective_ref: "fixture.invalid/ados-local#11",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        draft_pr: "fixture.invalid/ados-local#12",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        objective_ref: "fixture.invalid/ados-fixture-delivery#5",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++        draft_pr: "fixture.invalid/ados-fixture-delivery#6",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      execution_profile: "safety.fixture-dogfood-gate@0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/profile.ts
++++ public-copy/src/safety/slice4/profile.ts
+@@ -2,15 +2,15 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++export const SLICE4_PROFILE_VERSION = "0.1.0-public.1";
++export const SLICE4_CAPABILITY_DIGEST = "sha256:1be6e8e84e11bc6415e1b819b4b69f7f05c97d4a6f4b52e552c28352cd25f4a4";
++export const SLICE4_CENTRAL_SHA = "3f5801451f991226704f7b141ddbd6fbcb7e31ac";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++export const SLICE4_LOCAL_BASE_SHA = "6c7c5c32832eadc8dd9261d9fc637fb15ee0e1a1";
++export const SLICE4_FIXTURE_BASE_SHA = "4e772e775cbc843420c8580fcff8a85c92754bdd";
++export const SLICE4_LOCAL_HARNESS_BLOB = "6538508ebeaa2d0888353393cc5a191bdadfc5cb";
++export const SLICE4_FIXTURE_HARNESS_BLOB = "8633374fa4563be68c46fdde5e0fffbe2a977a86";
++export const SLICE4_REPAIR_PROFILE_VERSION = "0.1.1-public.1" as const;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -37,10 +37,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    repository: "fixture.invalid/ados-fixture-delivery",
++    objective_ref: "fixture.invalid/ados-fixture-delivery#5",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    branch: "fixture/public-target-safety-v1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/resolver.ts
++++ public-copy/src/safety/slice4/resolver.ts
+@@ -16,9 +16,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++export const SLICE4_RESOLVER_VERSION = "0.1.1-public.1" as const;
++export const SLICE4_FIXTURE_REPOSITORY = "fixture.invalid/ados-fixture-delivery" as const;
++export const SLICE4_FIXTURE_OBJECTIVE_REF = "fixture.invalid/ados-fixture-delivery#5" as const;
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -88,7 +88,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      `fixture.invalid/control@${SLICE4_CENTRAL_SHA}#docs/ados-personal/implementation/SLICE4_REPAIR_AMENDMENT_PLAN_V0.1.md`);
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -102,7 +102,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      "synthetic://ados-public/v1/slice4-approval" ||
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/safety/slice4/session.ts
++++ public-copy/src/safety/slice4/session.ts
+@@ -9,7 +9,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++const revision1 = "710bd4c9e1ba5912219ba401e205e9cec91268d4";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/src/storage/event-store.ts
++++ public-copy/src/storage/event-store.ts
+@@ -109,22 +109,22 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly resolver_profile_version: "0.1.0-public.1" | "0.1.1-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly repository_full_name: "fixture.invalid/ados-fixture-delivery";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly objective_ref: "fixture.invalid/ados-fixture-delivery#3" | "fixture.invalid/ados-fixture-delivery#5";
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    | "fixture.invalid/ados-fixture-delivery@e75d162750acf4775a7a1ba1d1955ca9d60bc73f#docs/HARNESS.md"
++    | "fixture.invalid/ados-fixture-delivery@4e772e775cbc843420c8580fcff8a85c92754bdd#docs/HARNESS.md";
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    | "e75d162750acf4775a7a1ba1d1955ca9d60bc73f"
++    | "4e772e775cbc843420c8580fcff8a85c92754bdd";
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  readonly execution_profile_version: "0.1.0-public.1" | "0.1.0-slice4-repair-public.1";
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/compiler.test.ts
++++ public-copy/test/compiler.test.ts
+@@ -62,7 +62,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: "0.3.1-public.1" as const,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -192,7 +192,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: "0.3.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -213,7 +213,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(profile.profile_version, "0.3.1-public.1");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/fixtures/slice3a/chatgpt-parser-drift.json
++++ public-copy/test/fixtures/slice3a/chatgpt-parser-drift.json
+@@ -1,7 +1,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  "capture_profile_version": "0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/fixtures/slice3a/chatgpt-supported.json
++++ public-copy/test/fixtures/slice3a/chatgpt-supported.json
+@@ -1,7 +1,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  "capture_profile_version": "0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/native-protocol.test.ts
++++ public-copy/test/native-protocol.test.ts
+@@ -184,7 +184,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++test("one-shot Host handles status, compile, and confirm without stdin EOF", { skip: process.platform !== "win32" ? "Requires the Windows Native Host / npm.cmd profile" : false }, async () => {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -201,7 +201,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++test("stdin.end(frame) remains a supported one-shot success path", { skip: process.platform !== "win32" ? "Requires the Windows Native Host / npm.cmd profile" : false }, async () => {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -215,7 +215,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++test("Host frame timeout exits one-shot process with the exact blocker", { skip: process.platform !== "win32" ? "Requires the Windows Native Host / npm.cmd profile" : false }, async () => {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/slice2.test.ts
++++ public-copy/test/slice2.test.ts
+@@ -46,7 +46,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    url: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/slice3a.test.ts
++++ public-copy/test/slice3a.test.ts
+@@ -113,13 +113,13 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    local_objective_ref: "fixture.invalid/ados-local#9",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    target_objective_ref: "fixture.invalid/ados-fixture-delivery#3",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    target_base_sha: "e75d162750acf4775a7a1ba1d1955ca9d60bc73f",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -130,9 +130,9 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    local_objective_ref: "fixture.invalid/ados-local#11",
++    target_objective_ref: "fixture.invalid/ados-fixture-delivery#5",
++    target_base_sha: "4e772e775cbc843420c8580fcff8a85c92754bdd",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -161,7 +161,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    compiler_profile_version: "0.3.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -656,8 +656,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    target_objective_ref: "fixture.invalid/ados-fixture-delivery#3",
++    target_base_sha: "e75d162750acf4775a7a1ba1d1955ca9d60bc73f",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -1046,7 +1046,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++test("two concurrent one-shot Native Hosts reconcile one Receipt and Activation", { skip: process.platform !== "win32" ? "Requires the Windows Native Host / npm.cmd profile" : false }, async () => {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/slice3b.test.ts
++++ public-copy/test/slice3b.test.ts
+@@ -135,7 +135,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    objective_ref: "fixture.invalid/ados-fixture-delivery#3",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -158,18 +158,18 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    resolver_profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    resolution_digest: hashCanonical({ objective_ref: "fixture.invalid/ados-fixture-delivery#3", base: "9177" }),
++    repository_full_name: "fixture.invalid/ados-fixture-delivery",
++    repository_id: "10002",
++    objective_ref: "fixture.invalid/ados-fixture-delivery#3",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    project_harness_ref: "fixture.invalid/ados-fixture-delivery@e75d162750acf4775a7a1ba1d1955ca9d60bc73f#docs/HARNESS.md",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    base_sha: "e75d162750acf4775a7a1ba1d1955ca9d60bc73f",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    execution_profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -181,7 +181,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    objective_ref: "fixture.invalid/ados-fixture-delivery#5",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -191,18 +191,18 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    resolver_profile_version: "0.1.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    repository_full_name: "fixture.invalid/ados-fixture-delivery",
++    repository_id: "10002",
++    objective_ref: "fixture.invalid/ados-fixture-delivery#5",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    project_harness_ref: "fixture.invalid/ados-fixture-delivery@4e772e775cbc843420c8580fcff8a85c92754bdd#docs/HARNESS.md",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    base_sha: "4e772e775cbc843420c8580fcff8a85c92754bdd",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    execution_profile_version: "0.1.0-slice4-repair-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -308,7 +308,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    assert.equal(bound.binding.objective_ref, "fixture.invalid/ados-fixture-delivery#5");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -321,7 +321,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      resolver_profile_version: "0.1.0-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/slice4.test.ts
++++ public-copy/test/slice4.test.ts
+@@ -44,6 +44,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
++// Synthetic card inputs, never evidence that a Windows validation was run.
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -63,25 +64,25 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      resolver_profile_id: "resolver.fixture-single-running-objective", resolver_profile_version: "0.1.1-public.1",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      repository_full_name: "fixture.invalid/ados-fixture-delivery", repository_id: "repo-id",
++      objective_ref: "fixture.invalid/ados-fixture-delivery#5", objective_digest: digest,
++      project_harness_ref: "fixture.invalid/ados-fixture-delivery@4e772e775cbc843420c8580fcff8a85c92754bdd#docs/HARNESS.md",
++      harness_digest: digest, base_sha: "4e772e775cbc843420c8580fcff8a85c92754bdd",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      execution_profile_version: "0.1.0-slice4-repair-public.1", execution_capability_digest: digest,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      objective_ref: "fixture.invalid/ados-fixture-delivery#5", request_digest: digest, objective_digest: digest,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      run_id: "run-repair", repository_full_name: "fixture.invalid/ados-fixture-delivery",
++      base_sha: "4e772e775cbc843420c8580fcff8a85c92754bdd", branch_name: "fixture/public-target-safety-v1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -90,21 +91,21 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      { run_id: "run-repair", effect_kind: "DRAFT_PR", identity_key: "fixture.invalid/ados-fixture-delivery#6", outbox_id: "pr",
++        target_ref: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6", candidate_sha: candidate,
++        status: "CONFIRMED", result_ref: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6", readback_digest: digest, last_event_seq: 6 },
++      { run_id: "run-repair", effect_kind: "EVIDENCE_CORRECTION", identity_key: "ados-fixture-delivery:run-public-slice4-safety-0001:1", outbox_id: "evidence",
++        target_ref: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-1000001", candidate_sha: candidate,
++        status: "CONFIRMED", result_ref: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-1000001", readback_digest: digest, last_event_seq: 7 },
++      { run_id: "run-repair", effect_kind: "EVIDENCE_COMMENT", identity_key: "ados-fixture-delivery:run-public-slice4-safety-0001:1", outbox_id: "evidence-revision3",
++        target_ref: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-1000001", candidate_sha: candidate,
++        status: "CONFIRMED", result_ref: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-1000001", readback_digest: digest, last_event_seq: 8 },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++        receipt_digest: digest, run_id: "run-public-slice4-n1-cancel-0001",
++        terminal_blocker: "FENCING_REJECTED:run-public-slice4-n1-cancel-0001", event_count: 4,
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -114,29 +115,29 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++      restricted: { passed: 1, total: 2, blocker: "CANCEL_PROCESS_TREE_TERMINATION_FAILED:42420" },
++      approved_host: { passed: 2, total: 2, blocker: null },
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    local_candidate_sha: "c".repeat(40), local_candidate_parent: "c4b3be5327851f82712558fee8110a384eb37525",
++    local_pr_url: "https://github.com/fixture.invalid/ados-local/pull/12",
++    revision1_reachable: true, revision2_parent: "710bd4c9e1ba5912219ba401e205e9cec91268d4",
++    revision1_tree: tree, revision2_tree: tree, evidence_comment_id: 1000001,
++    evidence_comment_url: "https://github.com/fixture.invalid/ados-fixture-delivery/pull/6#issuecomment-1000001",
++    evidence_body: "<!-- ados-evidence:ados-fixture-delivery:run-public-slice4-safety-0001:1 -->",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(slice4Profile.profile_version, "0.1.0-public.1");
++  assert.equal(SLICE4_REPAIR_PROFILE_VERSION, "0.1.1-public.1");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(slice4FixtureTask.target_branch, "fixture/public-target-safety-v1");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -144,7 +145,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++test("bounded process launcher executes Windows npm.cmd verification", { skip: process.platform !== "win32" ? "Requires the Windows Native Host / npm.cmd profile" : false }, () => {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -152,10 +153,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++    resolver_profile_id: "resolver.fixture-single-running-objective", resolver_profile_version: "0.1.1-public.1",
++    resolver_capability_digest: digest, resolution_digest: digest, repository_full_name: "fixture.invalid/ados-fixture-delivery",
++    repository_id: "repo-id", objective_ref: "fixture.invalid/ados-fixture-delivery#5", objective_digest: digest,
++    project_harness_ref: "harness", harness_digest: digest, base_sha: "4e772e775cbc843420c8580fcff8a85c92754bdd",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -169,7 +170,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    run_id: "run-public-slice4-n1-cancel-0001",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -178,7 +179,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    terminal_blocker: "FENCING_REJECTED:run-public-slice4-n1-cancel-0001",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -199,7 +200,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(ready.repair.ados_local_pr, "fixture.invalid/ados-local#12");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -220,7 +221,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++      approved_host: { passed: 1, total: 2, blocker: "CANCEL_PROCESS_TREE_TERMINATION_FAILED:1234" },
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -253,10 +254,10 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++          "Squash merge / 当前中央 main : 3f5801451f991226704f7b141ddbd6fbcb7e31ac",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++          "6bfbb7b8b74bad18144c97d439260a98e11384f3",
++          "710bd4c9e1ba5912219ba401e205e9cec91268d4",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -272,7 +273,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    profile_version: "0.3.1-public.1",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -308,26 +309,26 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    local_objective_ref: "fixture.invalid/ados-local#11",
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    target_objective_ref: "fixture.invalid/ados-fixture-delivery#5",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++    target_base_sha: "4e772e775cbc843420c8580fcff8a85c92754bdd",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(hint.repository, "fixture.invalid/ados-fixture-delivery");
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(bound.card_binding.local.objective_ref, "fixture.invalid/ados-local#11");
++  assert.equal(bound.card_binding.local.draft_pr, "fixture.invalid/ados-local#12");
++  assert.equal(bound.card_binding.fixture.objective_ref, "fixture.invalid/ados-fixture-delivery#5");
++  assert.equal(bound.card_binding.fixture.draft_pr, "fixture.invalid/ados-fixture-delivery#6");
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  assert.equal(bound.card_binding.execution_profile, "safety.fixture-dogfood-gate@0.1.1-public.1");
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -337,8 +338,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++        "3f5801451f991226704f7b141ddbd6fbcb7e31ac",
++        "316a71840141df22846599643cd72330fa6fbcc6",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/test/storage.test.ts
++++ public-copy/test/storage.test.ts
+@@ -11,9 +11,7 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++test("exact Windows SQLite prebuilt binary matches the frozen SHA", { skip: process.platform !== "win32" ? "Windows x64 prebuilt binary identity; Linux is a separate artifact" : false }, () => {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -25,6 +23,12 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
++});
++
++
++test("SQLite embedded version, pragmas, STRICT and foreign keys pass", () => {
++  const fixture = isolatedStore("identity");
++  try {
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -367,8 +371,8 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
++        repository_full_name: "fixture.invalid/ados-fixture-delivery",
++        base_sha: "3536f4810f9cfadc75443a838a26e969883fca44",
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+--- fixed-source/vendor/ados/manifest.json
++++ public-copy/vendor/ados/manifest.json
+@@ -3,22 +3,6 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+-[source line omitted: inspect authorized fixed source locally]
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+@@ -101,5 +85,6 @@
+ [unchanged context omitted]
+ [unchanged context omitted]
+ [unchanged context omitted]
+-[source line omitted: inspect authorized fixed source locally]
++  ],
++  "distribution_note": "Public source fixture copy; provenance is not an approval for a new Run."
+ [unchanged context omitted]

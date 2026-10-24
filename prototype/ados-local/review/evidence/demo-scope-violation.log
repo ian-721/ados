@@ -1,0 +1,5 @@
+(node:540) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS_SCOPE_VIOLATIONS_REJECTED (PASS)
+Forbidden, traversal, and unlisted paths were default-denied before any protected mutation.
+Structured evidence: .ados-local/evidence/scope-violation.json

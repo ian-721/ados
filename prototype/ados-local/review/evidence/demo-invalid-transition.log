@@ -1,0 +1,5 @@
+(node:548) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS_INVALID_TRANSITION_REJECTED (PASS)
+PREPARED → OWNER_REVIEW was rejected with unchanged Event and projection state.
+Structured evidence: .ados-local/evidence/invalid-transition.json

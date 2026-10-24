@@ -1,0 +1,1 @@
+{"command":"invalid-transition","evidence":{"event_count":1,"rejection":"INVALID_TRANSITION:PREPARED:OWNER_REVIEW","state":"PREPARED"},"result":"PASS_INVALID_TRANSITION_REJECTED","status":"PASS","summary":["PREPARED → OWNER_REVIEW was rejected with unchanged Event and projection state."]}

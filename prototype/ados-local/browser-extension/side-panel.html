@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>ADOS Local</title>
+    <link rel="stylesheet" href="side-panel.css">
+  </head>
+  <body>
+    <main>
+      <header class="brand">
+        <div class="mark" aria-hidden="true">A</div>
+        <div>
+          <p class="eyebrow">ADOS LOCAL · SLICE 3B</p>
+          <h1>Trusted local delivery</h1>
+        </div>
+      </header>
+
+      <section class="status-panel" aria-live="polite">
+        <span id="status-dot" class="status-dot"></span>
+        <div>
+          <p id="status-title" class="status-title">Ready to capture</p>
+          <p id="status-detail" class="status-detail">Select visible messages in this ChatGPT conversation.</p>
+        </div>
+      </section>
+
+      <button id="capture" class="primary" type="button">Capture selected messages</button>
+
+      <section id="card" class="card hidden" aria-labelledby="card-title">
+        <div class="card-kicker">
+          <span>DELIVERY REQUEST v0.2</span>
+          <span id="readiness" class="pill"></span>
+        </div>
+        <h2 id="card-title"></h2>
+
+        <div class="section">
+          <h3>Owner decisions</h3>
+          <ul id="decisions"></ul>
+        </div>
+        <div class="section">
+          <h3>Selected Repair context · non-authoritative</h3>
+          <p id="selected-context"></p>
+        </div>
+        <div class="grid">
+          <div class="section compact">
+            <h3>Authorization</h3>
+            <p id="authorization"></p>
+          </div>
+          <div class="section compact">
+            <h3>Target</h3>
+            <p id="target">Unverified hint</p>
+          </div>
+        </div>
+        <div class="section">
+          <h3>Retained revision-1 lineage</h3>
+          <ul id="lineage"></ul>
+        </div>
+        <div class="section">
+          <h3>Authorized effects after binding</h3>
+          <ul id="contract"></ul>
+        </div>
+        <div class="section">
+          <h3>Risks and boundary</h3>
+          <ul id="risks"></ul>
+          <p id="boundary" class="boundary">No Objective · No Run · No dispatch · No target mutation</p>
+        </div>
+        <div class="digest-grid">
+          <div><span>Selected</span><code id="digest-selected"></code></div>
+          <div><span>Owner</span><code id="digest-owner"></code></div>
+          <div><span>Candidate</span><code id="digest-candidate"></code></div>
+          <div><span>Request</span><code id="digest-request"></code></div>
+        </div>
+        <p id="profiles" class="profiles"></p>
+        <div class="consequence">
+          <span>ONE CONFIRMATION CREATES</span>
+          <strong id="consequence">RECEIPT · ACTIVATION · EXACT BOUND REPAIR</strong>
+        </div>
+        <button id="confirm" class="confirm" type="button" disabled>Confirm exact request</button>
+      </section>
+
+      <section id="activation" class="activation hidden" aria-labelledby="activation-title">
+        <p class="eyebrow">DURABLE LOCAL INTAKE</p>
+        <h2 id="activation-title">Approved</h2>
+        <dl>
+          <div><dt>Receipt</dt><dd id="receipt-id"></dd></div>
+          <div><dt>Activation</dt><dd id="activation-id"></dd></div>
+          <div><dt>Request</dt><dd id="request-id"></dd></div>
+        </dl>
+        <p class="safe">The authenticated Activation is immutable. Dispatch requires exact IMPLEMENT authority.</p>
+        <div id="dispatch" class="section hidden">
+          <h3>Fulfillment</h3>
+          <dl>
+            <div><dt>State</dt><dd id="dispatch-state"></dd></div>
+            <div><dt>Objective</dt><dd id="objective-ref"></dd></div>
+            <div><dt>Run</dt><dd id="run-id"></dd></div>
+            <div><dt>Branch</dt><dd id="target-branch"></dd></div>
+            <div><dt>Candidate</dt><dd id="candidate-sha"></dd></div>
+          </dl>
+          <p><a id="target-pr" class="hidden" target="_blank" rel="noreferrer">Open fixture Draft PR</a></p>
+          <p><a id="evidence" class="hidden" target="_blank" rel="noreferrer">Open candidate Evidence</a></p>
+        </div>
+      </section>
+    </main>
+    <script src="capture-profile.js"></script>
+    <script src="native-message.js"></script>
+    <script src="side-panel.js"></script>
+  </body>
+</html>

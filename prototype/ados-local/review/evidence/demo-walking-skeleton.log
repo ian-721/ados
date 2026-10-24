@@ -1,0 +1,17 @@
+(node:487) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS_CONTRACT_WALKING_SKELETON (PASS)
+Request digest: sha256:6a4098b7c500194b34e9c36fac4b1aa805b081cb12f3309740d4bac3eb6db095
+Owner Receipt: sha256:17bb1afeb97cf81a7318e94e776b1913aee0f1418e44b2fc96f8b59509808ea3; binding=PASS
+Objective: fixture.invalid/ados-local#1
+Envelope digest: sha256:ed15007dc3c182113ac98164b2c34f097964ae786748a2521adc4cec4a94bbfc
+Run: run-walking-skeleton-0001; local state=DONE
+Lease: holder=coordinator-fixture; fencing=1; live=0
+Event timeline: 1:RUN_PREPARED → 2:OWNER_APPROVAL_RECORDED → 3:RUN_STATE_CHANGED → 4:AGENT_CLAIM_T0 → 5:RUN_STATE_CHANGED → 6:OBLIGATION_SATISFIED → 7:OBLIGATION_SATISFIED → 8:ARTIFACT_RECORDED → 9:EVIDENCE_RECORDED → 10:RUN_STATE_CHANGED → 11:OBLIGATION_SATISFIED → 12:RUN_STATE_CHANGED → 13:OBLIGATION_SATISFIED → 14:RUN_STATE_CHANGED
+Obligations: engineering-core=SATISFIED@T2, owner-acceptance=SATISFIED@T4, product-demo=SATISFIED@T2, publication-draft=SATISFIED@T2
+Verifier receipts: vr-engineering-core@T2=PASS, vr-owner-acceptance@T4=PASS, vr-product-demo@T2=PASS, vr-publication-draft@T2=PASS
+Evidence: evidence-walking-skeleton-0001 sha256:7824e2818ebe739146f120d9030aef7d4cf8dadb6529e945c267e7b72c724bb3 at repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md
+Gate 0S/A/B in this command: NOT_RUN/NOT_RUN/NOT_RUN
+Fixture T4 Owner Acceptance is explicitly simulated; it proves runtime semantics only.
+This candidate awaits Owner review; synthetic DONE does not accept any real Objective.
+Structured evidence: .ados-local/evidence/walking-skeleton.json

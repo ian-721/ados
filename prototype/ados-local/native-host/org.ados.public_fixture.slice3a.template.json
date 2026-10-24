@@ -1,0 +1,9 @@
+{
+  "name": "org.ados.public_fixture.slice3a",
+  "description": "ADOS Local Slice 3A one-shot intake host",
+  "path": "__HOST_PATH__",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://fpmliiakgebgdlgaddocgddllidmkomd/"
+  ]
+}

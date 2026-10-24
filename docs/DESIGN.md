@@ -75,7 +75,7 @@ A complete continuity design needs to preserve more than a text summary:
 - execution progress, environment assumptions and unresolved obligations;
 - artifact identity, evidence and any confirmed external effects.
 
-The private local prototype has explored bounded persistence and recovery in synthetic software tasks. This does not establish reliable continuation across arbitrary devices, models, outages or projects.
+The local prototype has explored bounded persistence and recovery in synthetic software tasks; its [sanitized source candidate](../prototype/ados-local/README.md) is included here. This does not establish reliable continuation across arbitrary devices, models, outages or projects.
 
 ## 5. Changing requirements should not erase valid work
 

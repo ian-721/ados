@@ -1,0 +1,90 @@
+{
+  "manifest_version": "ados-vendor-manifest/v0.1",
+  "source_repository": "ian-721/agentic-delivery-os",
+  "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+  "implementation_plan_commit": "b57fbe8f84a609bc1bed615542c868b24cc3f6a7",
+  "files": [
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/ADAPTER_PROFILE_CONTRACT_V0.1.md",
+      "destination_path": "vendor/ados/contracts/ADAPTER_PROFILE_CONTRACT_V0.1.md",
+      "sha256": "f686a74535f98c77daf84f6a606914fe541584cd4f17eb4ba9dc43dd0070be4e",
+      "schema_id": null,
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/DELIVERY_REQUEST_CONTRACT_V0.2.md",
+      "destination_path": "vendor/ados/contracts/DELIVERY_REQUEST_CONTRACT_V0.2.md",
+      "sha256": "6c9ebe945ab682c3fea7ec46e5edf57bccc4bda5b6528f578678a458d3d18720",
+      "schema_id": null,
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/OBJECTIVE_CONTRACT.md",
+      "destination_path": "vendor/ados/contracts/OBJECTIVE_CONTRACT.md",
+      "sha256": "cf15727961a69a5ff02e3cc18a2eae3f5c0c5094f157146292f47959121d5a18",
+      "schema_id": null,
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "standards/OPERATING_MODEL.md",
+      "destination_path": "vendor/ados/contracts/OPERATING_MODEL.md",
+      "sha256": "a71838cbb32cd767cf9efc0a1c23279e27b1695926cb0a52fb7a273e2fd8233c",
+      "schema_id": null,
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/RUN_ENVELOPE_CONTRACT_V0.2.md",
+      "destination_path": "vendor/ados/contracts/RUN_ENVELOPE_CONTRACT_V0.2.md",
+      "sha256": "cb214261e6406087454ae3c73248d9cfd8f477a7022820a6f3290f00bab5b1ca",
+      "schema_id": null,
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/schemas/delivery-request-v0.2.schema.json",
+      "destination_path": "vendor/ados/schemas/delivery-request-v0.2.schema.json",
+      "sha256": "b13fd365a4a8b41dca5be7bf55e51d9a12f84680f3d0646fdf37e291504d6191",
+      "schema_id": "https://ados.dev/schemas/delivery-request-v0.2.schema.json",
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/schemas/evidence-manifest-v0.1.schema.json",
+      "destination_path": "vendor/ados/schemas/evidence-manifest-v0.1.schema.json",
+      "sha256": "4528a9754710f3a86337a3dae0c0bbb671593133698e657ef83803a611d4f2d4",
+      "schema_id": "https://ados.local/contracts/evidence-manifest-v0.1.schema.json",
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/schemas/objective-record-v0.2.schema.json",
+      "destination_path": "vendor/ados/schemas/objective-record-v0.2.schema.json",
+      "sha256": "08f57ee1a329f7496c5b8f307c14b10cbb17f665f3dd885c101684480b183950",
+      "schema_id": "https://ados.local/contracts/objective-record-v0.2.schema.json",
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    },
+    {
+      "source_repository": "ian-721/agentic-delivery-os",
+      "source_commit": "165155ae729d0c3d22d718bdc780351418362583",
+      "source_path": "contracts/schemas/run-envelope-v0.2.schema.json",
+      "destination_path": "vendor/ados/schemas/run-envelope-v0.2.schema.json",
+      "sha256": "c031fbfac9986cc93a36ddf694f74672f5ddf90f3a2539ecfff6ec45d4f3121c",
+      "schema_id": "https://ados.dev/schemas/run-envelope-v0.2.schema.json",
+      "copy_method": "git archive from exact source commit; byte-for-byte copy"
+    }
+  ],
+  "distribution_note": "Public source fixture copy; provenance is not an approval for a new Run."
+}

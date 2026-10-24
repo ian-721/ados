@@ -1,0 +1,5 @@
+(node:532) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS_CANCEL_TERMINAL (PASS)
+CANCELLED disabled the lease and rejected later Agent mutation without a new Event.
+Structured evidence: .ados-local/evidence/cancel.json

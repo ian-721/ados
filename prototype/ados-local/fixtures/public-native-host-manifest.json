@@ -1,0 +1,9 @@
+{
+  "name": "org.ados.public_fixture.slice3a",
+  "description": "ADOS Local public fixture one-shot intake host",
+  "path": "C:\\ADOS-Public-Fixture\\prototype\\ados-local\\native-host\\ados-local-slice3a.cmd",
+  "type": "stdio",
+  "allowed_origins": [
+    "chrome-extension://fpmliiakgebgdlgaddocgddllidmkomd/"
+  ]
+}

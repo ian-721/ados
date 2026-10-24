@@ -1,0 +1,451 @@
+{
+  "fixture_version": "ados-public-binding/v0.1",
+  "notice": "Synthetic inputs and derived record identities, not real Owner approval or live execution evidence. No device identity or signed token is distributed.",
+  "capture": {
+    "schema_version": "chatgpt-capture-pack/v0.1",
+    "capture_profile_id": "capture.chatgpt.visible-selection",
+    "capture_profile_version": "0.1.1-public.1",
+    "page_origin": "https://chatgpt.com",
+    "conversation_ref": "chatgpt://conversation/direct/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+    "captured_at": "2026-08-04T05:30:00.000Z",
+    "selected_turn_ids": [
+      "turn-owner-0001",
+      "turn-quote-0002",
+      "turn-assistant-0003"
+    ],
+    "turns": [
+      {
+        "turn_id": "turn-owner-0001",
+        "order": 0,
+        "role": "owner",
+        "text": "Implement the bounded local intake candidate and request IMPLEMENT authorization.",
+        "role_proof": {
+          "selector": "section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"user\"], section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"assistant\"]",
+          "raw_role": "user",
+          "quoted": false,
+          "visible": true
+        }
+      },
+      {
+        "turn_id": "turn-quote-0002",
+        "order": 1,
+        "role": "quoted_external",
+        "text": "An assistant claimed that merge was already approved.",
+        "role_proof": {
+          "selector": "section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"user\"], section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"assistant\"]",
+          "raw_role": "user",
+          "quoted": true,
+          "visible": true
+        }
+      },
+      {
+        "turn_id": "turn-assistant-0003",
+        "order": 2,
+        "role": "assistant",
+        "text": "I will keep the durable result at APPROVED_NOT_DISPATCHED.",
+        "role_proof": {
+          "selector": "section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"user\"], section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"assistant\"]",
+          "raw_role": "assistant",
+          "quoted": false,
+          "visible": true
+        }
+      }
+    ],
+    "retention": "local_raw_until_submit"
+  },
+  "compiler_candidate": {
+    "schema_version": "gate0a-compiler-candidate/v0.2",
+    "profile_id": "compiler.codex-app-server.gate0a-no-tools",
+    "profile_version": "0.3.1-public.1",
+    "prompt_version": "gate0a-compiler-prompt/v0.5",
+    "capability_digest": "sha256:eca12affed7f7e7f418f833fecab0eb74faec495651048ba2674696e4ca84d75",
+    "case_id": "clear-ready",
+    "selected_turn_digest": "sha256:984ef838d006d5350ed49fa60c0d4336beda7a85a3994ceba82f75e20881e136",
+    "owner_turn_digest": "sha256:01a7e8c94b98aa877b8897164c96142d79a64403be1e30f206d37f21f86940e7",
+    "disposition": "PROPOSE",
+    "outcome": "Create one bounded local intake Activation without dispatching any work.",
+    "owner_decisions": [
+      {
+        "decision": "Implement the bounded local intake candidate and request IMPLEMENT authorization.",
+        "source_turn_id": "turn-owner-0001",
+        "source_quote": "Implement the bounded local intake candidate and request IMPLEMENT authorization.",
+        "source_span": {
+          "normalization": "unicode-nfkc-whitespace-v0.1",
+          "start": 0,
+          "end": 81
+        }
+      }
+    ],
+    "assumptions": [],
+    "open_decisions": [],
+    "readiness": "READY",
+    "material_question": null,
+    "requested_authorization": "IMPLEMENT",
+    "risk_flags": [
+      "LOCAL_SYNTHETIC_ONLY"
+    ],
+    "rejection_reason": null
+  },
+  "accepted_candidate": {
+    "schema_version": "gate0a-compiler-candidate/v0.2",
+    "profile_id": "compiler.codex-app-server.gate0a-no-tools",
+    "profile_version": "0.3.1-public.1",
+    "prompt_version": "gate0a-compiler-prompt/v0.5",
+    "capability_digest": "sha256:eca12affed7f7e7f418f833fecab0eb74faec495651048ba2674696e4ca84d75",
+    "case_id": "clear-ready",
+    "selected_turn_digest": "sha256:984ef838d006d5350ed49fa60c0d4336beda7a85a3994ceba82f75e20881e136",
+    "owner_turn_digest": "sha256:01a7e8c94b98aa877b8897164c96142d79a64403be1e30f206d37f21f86940e7",
+    "disposition": "PROPOSE",
+    "outcome": "Create one bounded local intake Activation without dispatching any work.",
+    "owner_decisions": [
+      {
+        "decision": "Implement the bounded local intake candidate and request IMPLEMENT authorization.",
+        "source_turn_id": "turn-owner-0001",
+        "source_quote": "Implement the bounded local intake candidate and request IMPLEMENT authorization.",
+        "source_span": {
+          "normalization": "unicode-nfkc-whitespace-v0.1",
+          "start": 0,
+          "end": 81
+        }
+      }
+    ],
+    "assumptions": [],
+    "open_decisions": [],
+    "readiness": "READY",
+    "material_question": null,
+    "requested_authorization": "IMPLEMENT",
+    "risk_flags": [
+      "LOCAL_SYNTHETIC_ONLY"
+    ],
+    "rejection_reason": null,
+    "candidate_digest": "sha256:b5dcf7f61e7bd22d77e5fef292fba027778f5c05df997c473dcccfb232a92dc4"
+  },
+  "request": {
+    "schema_version": "ados-delivery-request/v0.2",
+    "request_id": "dr-dd11fad04ee0623e4cc82232cd429205",
+    "captured_at": "2026-08-04T05:30:00.000Z",
+    "capture": {
+      "adapter_id": "capture.chatgpt.visible-selection",
+      "adapter_version": "0.1.1-public.1",
+      "platform": "chatgpt-web",
+      "conversation_ref": "chatgpt://conversation/direct/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+      "selected_turn_digest": "sha256:0b0d145fe9ae74d179ac4875f7b225b2350bc19f7dc57ebc0aba1ba6c9774fd4",
+      "owner_turn_digest": "sha256:9db970c832091b69fcb2e7c92d60d4010ebe859c2b0fdb8a31eba5b336d19dd3",
+      "role_summary": [
+        {
+          "role": "owner",
+          "count": 1
+        },
+        {
+          "role": "assistant",
+          "count": 1
+        },
+        {
+          "role": "quoted_external",
+          "count": 1
+        }
+      ],
+      "retention": "minimized_only"
+    },
+    "compiler": {
+      "compiler_version": "gate0a-integration/v0.1",
+      "rules_version": "delivery-request/v0.2",
+      "profile_id": "compiler.codex-app-server.gate0a-no-tools",
+      "profile_version": "0.3.1-public.1",
+      "capability_digest": "sha256:eca12affed7f7e7f418f833fecab0eb74faec495651048ba2674696e4ca84d75",
+      "model_ref": "openai/gpt-5.6-sol"
+    },
+    "outcome": "Create one bounded local intake Activation without dispatching any work.",
+    "why_now": "The Owner selected this visible conversation window for local pre-dispatch intake and explicit confirmation.",
+    "owner_decisions": [
+      "Implement the bounded local intake candidate and request IMPLEMENT authorization."
+    ],
+    "assumptions": [],
+    "open_decisions": [],
+    "requested_authorization": "IMPLEMENT",
+    "target_hint": {
+      "delivery_class": "unknown",
+      "project_id": null,
+      "repository": null
+    },
+    "allowed_scope_hints": [],
+    "forbidden_scope_hints": [
+      "No Objective, Run, dispatch, Codex execution, target repository mutation, Merge, Release or Deploy is authorized by this intake."
+    ],
+    "quality_bar": [
+      "Preserve exact grounded Owner decisions, bind all identities locally, and stop at APPROVED_NOT_DISPATCHED."
+    ],
+    "acceptance": {
+      "engineering": [
+        "Create one immutable request, one authenticated local_extension_confirm Receipt and one durable Activation atomically."
+      ],
+      "product": [
+        "Restore the same Receipt and Activation after Browser or Native Host interruption without dispatch."
+      ],
+      "owner_artifact": {
+        "kind": "demo",
+        "description": "Trusted extension Side Panel showing the exact approved request and APPROVED_NOT_DISPATCHED identity."
+      }
+    },
+    "risk_flags": [
+      "sensitive_data"
+    ],
+    "readiness": "READY",
+    "request_digest": "sha256:e6c3fd17c3bc9e3f9400f78d8f9a4040eda03d0ef69066f98f185915d122be41"
+  },
+  "card": {
+    "schema_version": "slice3a-delivery-card/v0.1",
+    "request_id": "dr-dd11fad04ee0623e4cc82232cd429205",
+    "outcome": "Create one bounded local intake Activation without dispatching any work.",
+    "owner_decisions": [
+      {
+        "decision": "Implement the bounded local intake candidate and request IMPLEMENT authorization.",
+        "source_turn_id": "turn-owner-0001",
+        "source_quote": "Implement the bounded local intake candidate and request IMPLEMENT authorization."
+      }
+    ],
+    "assumptions": [],
+    "open_decisions": [],
+    "readiness": "READY",
+    "requested_authorization": "IMPLEMENT",
+    "target_hint": "UNVERIFIED",
+    "allowed_scope_hints": [],
+    "forbidden_scope_hints": [
+      "No Objective, Run, dispatch, Codex execution, target repository mutation, Merge, Release or Deploy is authorized by this intake."
+    ],
+    "quality_bar": [
+      "Preserve exact grounded Owner decisions, bind all identities locally, and stop at APPROVED_NOT_DISPATCHED."
+    ],
+    "engineering_acceptance": [
+      "Create one immutable request, one authenticated local_extension_confirm Receipt and one durable Activation atomically."
+    ],
+    "product_acceptance": [
+      "Restore the same Receipt and Activation after Browser or Native Host interruption without dispatch."
+    ],
+    "risk_flags": [
+      "sensitive_data"
+    ],
+    "capture_profile": "capture.chatgpt.visible-selection@0.1.1-public.1",
+    "compiler_profile": "compiler.codex-app-server.gate0a-no-tools@0.3.1-public.1",
+    "digest_short_codes": {
+      "selected_turn": "0b0d145fe9ae",
+      "owner_turn": "9db970c83209",
+      "candidate": "b5dcf7f61e7b",
+      "request": "e6c3fd17c3bc"
+    },
+    "consequence": "APPROVED_NOT_DISPATCHED",
+    "authority_notice": "NO_OBJECTIVE_NO_RUN_NO_DISPATCH_NO_TARGET_MUTATION"
+  },
+  "local_objective": {
+    "schema_version": "objective-record/v0.2",
+    "objective_id": "ados-public-slice3b-activation-v0.1",
+    "project_id": "ados-local",
+    "contract_version": "0.2.0",
+    "contract_ref": "ian-721/agentic-delivery-os@72f2d1ffbe86030d9f92a6629f4992111a7d6702#contracts/OBJECTIVE_CONTRACT.md",
+    "project_harness_ref": "fixture.invalid/ados-local@eb908c7ad58846f0d35d5a9989555203435ffbc9#docs/HARNESS.md",
+    "authorization": "IMPLEMENT",
+    "status": "BLOCKED",
+    "outcome": "Execute a synthetic contract walking skeleton.",
+    "why_now": "Gate zero requires local proof.",
+    "sources": [
+      {
+        "kind": "commit",
+        "ref": "fixture.invalid/ados-local@b85a8139cc6d98d7132c84e41a407bde94c813c9",
+        "description": "Frozen bootstrap."
+      }
+    ],
+    "allowed_scope": [
+      "src/intake/** only for a stateless device-signed JIT confirmation binding, exact live revalidation of the existing immutable Card/Candidate/draft Request, and atomic one-time consumption of the original durable Challenge; no recapture, recompile, request/card rewrite, schema migration or authorization escalation",
+      "existing src/native/** and browser-extension/** scope only to perform the internal prepare-confirm -> confirm two-message protocol under one visible Owner click and render precise blockers",
+      "existing focused intake/native/browser/Slice 3A/Slice 3B tests and docs/HARNESS.md, docs/SLICE3B_REPORT.md, docs/SLICE3B_OWNER_DEMO.md only for identities, commands and evidence"
+    ],
+    "forbidden_scope": [
+      "deployment"
+    ],
+    "quality_bar": [
+      "Fail closed."
+    ],
+    "engineering_acceptance": [
+      "All deterministic checks pass."
+    ],
+    "product_acceptance": [
+      "Owner can run the demo."
+    ],
+    "owner_artifact": {
+      "kind": "demo",
+      "location": "repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md",
+      "description": "Sanitized compiled command-line demo."
+    },
+    "dependencies": [
+      "Node 22.23.x"
+    ],
+    "stop_conditions": [
+      "Stop on contract drift."
+    ],
+    "owner_approval_ref": "synthetic://ados-public/v1/local-approval"
+  },
+  "target_objective": {
+    "schema_version": "objective-record/v0.2",
+    "objective_id": "fixture-owner-review-v0.1",
+    "project_id": "ados-fixture-delivery",
+    "contract_version": "0.2.0",
+    "contract_ref": "ian-721/agentic-delivery-os@72f2d1ffbe86030d9f92a6629f4992111a7d6702#contracts/OBJECTIVE_CONTRACT.md",
+    "project_harness_ref": "fixture.invalid/ados-fixture-delivery@e75d162750acf4775a7a1ba1d1955ca9d60bc73f#docs/HARNESS.md",
+    "authorization": "IMPLEMENT",
+    "status": "RUNNING",
+    "outcome": "Add one deterministic --owner-review CLI output exactly equal to `Order SO-1001 is ready for owner review: 3 items; total AUD 42.50.` while preserving the exact existing --machine and --owner-summary outputs, zero third-party dependencies and the frozen three-file scope.",
+    "why_now": "Gate zero requires local proof.",
+    "sources": [
+      {
+        "kind": "commit",
+        "ref": "fixture.invalid/ados-local@b85a8139cc6d98d7132c84e41a407bde94c813c9",
+        "description": "Frozen bootstrap."
+      }
+    ],
+    "allowed_scope": [
+      "src/**"
+    ],
+    "forbidden_scope": [
+      "deployment"
+    ],
+    "quality_bar": [
+      "Fail closed."
+    ],
+    "engineering_acceptance": [
+      "All deterministic checks pass."
+    ],
+    "product_acceptance": [
+      "Owner can run the demo."
+    ],
+    "owner_artifact": {
+      "kind": "demo",
+      "location": "repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md",
+      "description": "Sanitized compiled command-line demo."
+    },
+    "dependencies": [
+      "Node 22.23.x"
+    ],
+    "stop_conditions": [
+      "Stop on contract drift."
+    ],
+    "owner_approval_ref": "synthetic://ados-public/v1/target-approval"
+  },
+  "harness_text": "# Public synthetic fixture\n\nScope: README.md, src/index.js, test/summary.test.js. No dependencies, merge, release or deployment.\n",
+  "resolution": {
+    "resolver_profile_id": "resolver.fixture-single-running-objective",
+    "resolver_profile_version": "0.1.0-public.1",
+    "resolver_capability_digest": "sha256:88d6d6733713bd7c6af1971dbd84a3f6ca428efe560891cace3264ef229d7f4c",
+    "repository_full_name": "fixture.invalid/ados-fixture-delivery",
+    "repository_id": "10002",
+    "objective_ref": "fixture.invalid/ados-fixture-delivery#3",
+    "objective_digest": "sha256:03858ec2629c12de0523ff47fa8f0ec44b9e4dde8e9ebcd2838bc7b0231e5319",
+    "project_harness_ref": "fixture.invalid/ados-fixture-delivery@e75d162750acf4775a7a1ba1d1955ca9d60bc73f#docs/HARNESS.md",
+    "harness_digest": "sha256:13c28e03bdbee36042ace9618f057673503cc1dac96cf7884069f364831967bd",
+    "base_sha": "e75d162750acf4775a7a1ba1d1955ca9d60bc73f"
+  },
+  "ready_card_identity": {
+    "challenge_id": "challenge-6c4c8e85d18ae0df754215f3e2b767ac",
+    "selected_turn_digest": "sha256:0b0d145fe9ae74d179ac4875f7b225b2350bc19f7dc57ebc0aba1ba6c9774fd4",
+    "owner_turn_digest": "sha256:9db970c832091b69fcb2e7c92d60d4010ebe859c2b0fdb8a31eba5b336d19dd3",
+    "compiler_candidate_digest": "sha256:b5dcf7f61e7bd22d77e5fef292fba027778f5c05df997c473dcccfb232a92dc4",
+    "request_id": "dr-dd11fad04ee0623e4cc82232cd429205",
+    "request_digest": "sha256:e6c3fd17c3bc9e3f9400f78d8f9a4040eda03d0ef69066f98f185915d122be41",
+    "card_digest": "sha256:87957bdf1e831b5c4367dfc710e3e084e970e8fd8a059ab50a7bf0b2630c5201",
+    "capture_digest": "sha256:7b79a06a56a69ce71dd7020de301b36decbfc85a8377fda21ad4dcc577efef56",
+    "compiler_profile_id": "compiler.codex-app-server.gate0a-no-tools",
+    "compiler_profile_version": "0.3.1-public.1",
+    "compiler_profile_digest": "sha256:712be97b949b77c5f08b90d33d0b5bd3ffd65f22a440e2469ade45ea0a53f986",
+    "compiler_capability_digest": "sha256:eca12affed7f7e7f418f833fecab0eb74faec495651048ba2674696e4ca84d75",
+    "local_objective_digest": "sha256:febfa6143fe3e42102b5935978165291bda6a066f4f486231e01ad977f771eaa",
+    "target_objective_digest": "sha256:03858ec2629c12de0523ff47fa8f0ec44b9e4dde8e9ebcd2838bc7b0231e5319",
+    "target_resolution_digest": "sha256:5160ed789212ef6abd1a8d00691565168ae070a1d59fed7cd2ebba58e5518bb2",
+    "target_harness_digest": "sha256:13c28e03bdbee36042ace9618f057673503cc1dac96cf7884069f364831967bd"
+  },
+  "execution_admission": {
+    "host_name": "org.ados.public_fixture.slice3a",
+    "extension_origin": "chrome-extension://fpmliiakgebgdlgaddocgddllidmkomd/",
+    "host_manifest_sha256": "6db377897a4b7361b9849a1d2341661c542a1ad3190e48f8d1879e673bfae0f8",
+    "host_launcher_sha256": "e631514ade2589f2d2acfb2a97ac8a6cb3cab645dbe2b3dad15e8a965aed463d",
+    "protocol_version": "slice3a-native-message/v0.1",
+    "execution_profile_id": "executor.codex-app-server.fixture-v0.1",
+    "execution_profile_version": "0.1.0-slice4-repair-public.1",
+    "execution_capability_digest": "sha256:b055bbe3fa2aa44c6b069b85e13bdc8909ab0250ae991e4d7e387d5a46eea157",
+    "codex_executable_sha256": "fa960ec081bec3629f40c63ed610ebc49c7e5e077dfb42322b08cb6d460f0b8a",
+    "codex_version": "codex-cli 0.147.0-alpha.1.2"
+  },
+  "slice2_evidence": {
+    "schema_version": "evidence-manifest/v0.1",
+    "objective_id": "ados-local-fixture-walking-skeleton-v0.1",
+    "candidate_id": "candidate-walking-skeleton-0001",
+    "authorization": "IMPLEMENT",
+    "objective_status": "OWNER_REVIEW",
+    "contract_ref": "ian-721/agentic-delivery-os@165155ae729d0c3d22d718bdc780351418362583#contracts/OBJECTIVE_CONTRACT.md",
+    "project_harness_ref": "fixture.invalid/ados-local@b85a8139cc6d98d7132c84e41a407bde94c813c9#docs/HARNESS.md",
+    "inputs": [
+      {
+        "kind": "commit",
+        "ref": "fixture.invalid/ados-local@b85a8139cc6d98d7132c84e41a407bde94c813c9",
+        "description": "Bootstrap input."
+      }
+    ],
+    "changes": [
+      {
+        "path": "src/fixture.ts",
+        "change_type": "added",
+        "summary": "Synthetic fixture.",
+        "bytes_changed": 100
+      }
+    ],
+    "change_accounting": {
+      "method": "git diff --numstat",
+      "total_changed_bytes": 100,
+      "limit_bytes": 1000000
+    },
+    "engineering_checks": [
+      {
+        "name": "check",
+        "command": "npm run check",
+        "status": "PASS",
+        "evidence_ref": "fixture://check/0001"
+      }
+    ],
+    "owner_artifact": {
+      "kind": "demo",
+      "location": "repository://fixture.invalid/ados-local#docs/OWNER_DEMO.md",
+      "description": "Sanitized compiled walking skeleton."
+    },
+    "product_acceptance_status": "PENDING_OWNER",
+    "owner_acceptance_ref": null,
+    "blockers": [],
+    "stop_conditions": [],
+    "publication": {
+      "identity_key": "ados-local:run-walking-skeleton-0001:1",
+      "state": "DRAFT_OPEN",
+      "branch_refs": [
+        "feat/gate0-contract-walking-skeleton-v0.1"
+      ],
+      "candidate_refs": [
+        "candidate-walking-skeleton-0001"
+      ],
+      "pull_request_refs": [
+        "fixture://draft-pr/1"
+      ],
+      "state_writeback_ref": "fixture://objective/1",
+      "merged": false,
+      "released": false,
+      "merge_approval_ref": null,
+      "release_approval_ref": null,
+      "recovery_of": null
+    },
+    "execution_posture": {
+      "temporary_activation": false,
+      "post_run_state": "NOT_APPLICABLE",
+      "restoration_evidence_ref": null
+    },
+    "generated_at": "2026-08-02T00:03:00.000Z",
+    "generator": {
+      "name": "ados-local-fixture",
+      "version": "0.1.0-public.1"
+    }
+  }
+}

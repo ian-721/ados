@@ -1,0 +1,5 @@
+(node:516) [UNDICI-EHPA] Warning: EnvHttpProxyAgent is experimental, expect them to change at any time.
+(Use `node --trace-warnings ...` to show where the warning was created)
+PASS_FORGED_MUTATED_REPLAYED_RECEIPTS_REJECTED (PASS)
+Forged authorization, mutated request binding, and replayed receipt id were rejected atomically.
+Structured evidence: .ados-local/evidence/forged-approval.json

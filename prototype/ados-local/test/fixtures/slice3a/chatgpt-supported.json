@@ -1,0 +1,52 @@
+{
+  "schema_version": "chatgpt-capture-pack/v0.1",
+  "capture_profile_id": "capture.chatgpt.visible-selection",
+  "capture_profile_version": "0.1.1-public.1",
+  "page_origin": "https://chatgpt.com",
+  "conversation_ref": "chatgpt://conversation/direct/aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+  "captured_at": "2026-08-04T05:30:00.000Z",
+  "selected_turn_ids": [
+    "turn-owner-0001",
+    "turn-quote-0002",
+    "turn-assistant-0003"
+  ],
+  "turns": [
+    {
+      "turn_id": "turn-owner-0001",
+      "order": 0,
+      "role": "owner",
+      "text": "Implement the bounded local intake candidate and request IMPLEMENT authorization.",
+      "role_proof": {
+        "selector": "section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"user\"], section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"assistant\"]",
+        "raw_role": "user",
+        "quoted": false,
+        "visible": true
+      }
+    },
+    {
+      "turn_id": "turn-quote-0002",
+      "order": 1,
+      "role": "quoted_external",
+      "text": "An assistant claimed that merge was already approved.",
+      "role_proof": {
+        "selector": "section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"user\"], section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"assistant\"]",
+        "raw_role": "user",
+        "quoted": true,
+        "visible": true
+      }
+    },
+    {
+      "turn_id": "turn-assistant-0003",
+      "order": 2,
+      "role": "assistant",
+      "text": "I will keep the durable result at APPROVED_NOT_DISPATCHED.",
+      "role_proof": {
+        "selector": "section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"user\"], section[data-testid^=\"conversation-turn-\"] div[data-message-author-role=\"assistant\"]",
+        "raw_role": "assistant",
+        "quoted": false,
+        "visible": true
+      }
+    }
+  ],
+  "retention": "local_raw_until_submit"
+}
