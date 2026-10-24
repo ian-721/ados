@@ -1,0 +1,73 @@
+{
+  "schema_version": "evidence-manifest/v0.1",
+  "objective_id": "example-owner-verifiable-outcome",
+  "candidate_id": "example-owner-verifiable-outcome-01",
+  "authorization": "IMPLEMENT",
+  "objective_status": "RUNNING",
+  "contract_ref": "example-org/agentic-delivery-os@fedcba9876543210fedcba9876543210fedcba98#contracts/OBJECTIVE_CONTRACT.md",
+  "project_harness_ref": "example-org/example-project@0123456789abcdef0123456789abcdef01234567#docs/HARNESS.md",
+  "inputs": [
+    {
+      "kind": "file",
+      "ref": "docs/HARNESS.md",
+      "description": "Project-specific facts, commands, constraints, and evidence rules."
+    }
+  ],
+  "changes": [
+    {
+      "path": "src/candidate.py",
+      "change_type": "modified",
+      "summary": "Implement the bounded candidate.",
+      "bytes_changed": 512
+    }
+  ],
+  "change_accounting": {
+    "method": "staged_patch_bytes",
+    "total_changed_bytes": 512,
+    "limit_bytes": 4096
+  },
+  "engineering_checks": [
+    {
+      "name": "Project check",
+      "command": "python -m unittest",
+      "status": "PASS",
+      "evidence_ref": "local://test-report"
+    }
+  ],
+  "owner_artifact": {
+    "kind": "demo",
+    "location": "local://run-project-demo",
+    "description": "Directly runnable project demonstration."
+  },
+  "product_acceptance_status": "PENDING_OWNER",
+  "owner_acceptance_ref": null,
+  "blockers": [],
+  "stop_conditions": [
+    "Stop if an unapproved dependency, service, permission, or irreversible action is required."
+  ],
+  "publication": {
+    "identity_key": "example-owner-verifiable-outcome-01",
+    "state": "VERIFIED",
+    "branch_refs": [],
+    "candidate_refs": [
+      "local://candidate/example-owner-verifiable-outcome-01"
+    ],
+    "pull_request_refs": [],
+    "state_writeback_ref": "local://state/verified",
+    "merged": false,
+    "released": false,
+    "merge_approval_ref": null,
+    "release_approval_ref": null,
+    "recovery_of": null
+  },
+  "execution_posture": {
+    "temporary_activation": false,
+    "post_run_state": "NOT_APPLICABLE",
+    "restoration_evidence_ref": null
+  },
+  "generated_at": "2026-08-01T00:00:00Z",
+  "generator": {
+    "name": "example-generator",
+    "version": "1.0.0"
+  }
+}

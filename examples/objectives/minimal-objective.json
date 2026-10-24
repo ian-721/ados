@@ -1,0 +1,45 @@
+{
+  "schema_version": "objective-record/v0.2",
+  "objective_id": "example-owner-verifiable-outcome",
+  "project_id": "example-project",
+  "contract_version": "0.2.0",
+  "contract_ref": "example-org/agentic-delivery-os@fedcba9876543210fedcba9876543210fedcba98#contracts/OBJECTIVE_CONTRACT.md",
+  "project_harness_ref": "example-org/example-project@0123456789abcdef0123456789abcdef01234567#docs/HARNESS.md",
+  "authorization": "IMPLEMENT",
+  "status": "RUNNING",
+  "outcome": "Deliver one directly reviewable candidate that satisfies the project Harness and remains inside the approved authorization.",
+  "why_now": "The bounded objective is the current portfolio priority and its acceptance criteria are complete.",
+  "sources": [
+    {
+      "kind": "file",
+      "ref": "docs/HARNESS.md",
+      "description": "Project-specific facts, commands, constraints, and evidence rules."
+    }
+  ],
+  "allowed_scope": [
+    "src/",
+    "tests/"
+  ],
+  "forbidden_scope": [
+    "deployment/",
+    "production data"
+  ],
+  "quality_bar": [
+    "Preserve the approved user experience and implementation quality."
+  ],
+  "engineering_acceptance": [
+    "Run the project checks selected by the Harness."
+  ],
+  "product_acceptance": [
+    "Owner directly reviews the candidate artifact before DONE."
+  ],
+  "owner_artifact": {
+    "kind": "demo",
+    "location": "local://run-project-demo",
+    "description": "Directly runnable project demonstration."
+  },
+  "dependencies": [],
+  "stop_conditions": [
+    "Stop if an unapproved dependency, service, permission, or irreversible action is required."
+  ]
+}

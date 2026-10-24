@@ -1,0 +1,409 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ados.local/contracts/evidence-manifest-v0.1.schema.json",
+  "title": "ADOS Evidence Manifest v0.1",
+  "description": "Bounded, machine-readable evidence for one execution candidate. It cannot grant Owner acceptance.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "objective_id",
+    "candidate_id",
+    "authorization",
+    "objective_status",
+    "contract_ref",
+    "project_harness_ref",
+    "inputs",
+    "changes",
+    "change_accounting",
+    "engineering_checks",
+    "owner_artifact",
+    "product_acceptance_status",
+    "owner_acceptance_ref",
+    "blockers",
+    "stop_conditions",
+    "publication",
+    "execution_posture",
+    "generated_at",
+    "generator"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "evidence-manifest/v0.1"
+    },
+    "objective_id": {
+      "$ref": "#/$defs/stable_id"
+    },
+    "candidate_id": {
+      "$ref": "#/$defs/stable_id"
+    },
+    "authorization": {
+      "enum": [
+        "DISCOVERY",
+        "PLAN",
+        "IMPLEMENT",
+        "MERGE",
+        "RELEASE"
+      ]
+    },
+    "objective_status": {
+      "enum": [
+        "READY",
+        "RUNNING",
+        "OWNER_REVIEW",
+        "BLOCKED",
+        "DONE"
+      ]
+    },
+    "contract_ref": {
+      "$ref": "#/$defs/immutable_git_ref"
+    },
+    "project_harness_ref": {
+      "$ref": "#/$defs/immutable_git_ref"
+    },
+    "inputs": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "changes": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/change"
+      }
+    },
+    "change_accounting": {
+      "$ref": "#/$defs/change_accounting"
+    },
+    "engineering_checks": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/engineering_check"
+      }
+    },
+    "owner_artifact": {
+      "$ref": "#/$defs/owner_artifact"
+    },
+    "product_acceptance_status": {
+      "enum": [
+        "PENDING_OWNER",
+        "ACCEPTED",
+        "REJECTED"
+      ]
+    },
+    "owner_acceptance_ref": {
+      "$ref": "#/$defs/nullable_non_empty_text"
+    },
+    "blockers": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/non_empty_text"
+      }
+    },
+    "stop_conditions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/non_empty_text"
+      }
+    },
+    "publication": {
+      "$ref": "#/$defs/publication"
+    },
+    "execution_posture": {
+      "$ref": "#/$defs/execution_posture"
+    },
+    "generated_at": {
+      "type": "string",
+      "format": "date-time"
+    },
+    "generator": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "version"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "version": {
+          "$ref": "#/$defs/non_empty_text"
+        }
+      }
+    }
+  },
+  "$defs": {
+    "stable_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "immutable_git_ref": {
+      "type": "string",
+      "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+@[0-9a-f]{40}(?:#[A-Za-z0-9._/-]+)?$"
+    },
+    "non_empty_text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "nullable_non_empty_text": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "ref",
+        "description"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "issue",
+            "file",
+            "commit",
+            "decision",
+            "runtime",
+            "url",
+            "other"
+          ]
+        },
+        "ref": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "description": {
+          "$ref": "#/$defs/non_empty_text"
+        }
+      }
+    },
+    "owner_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "location",
+        "description"
+      ],
+      "properties": {
+        "kind": {
+          "enum": [
+            "preview",
+            "build",
+            "recording",
+            "screenshot",
+            "document",
+            "report",
+            "demo",
+            "other"
+          ]
+        },
+        "location": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "description": {
+          "$ref": "#/$defs/non_empty_text"
+        }
+      }
+    },
+    "change": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "path",
+        "change_type",
+        "summary",
+        "bytes_changed"
+      ],
+      "properties": {
+        "path": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "from_path": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "change_type": {
+          "enum": [
+            "added",
+            "modified",
+            "deleted",
+            "renamed"
+          ]
+        },
+        "summary": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "bytes_changed": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "engineering_check": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "name",
+        "command",
+        "status",
+        "evidence_ref"
+      ],
+      "properties": {
+        "name": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "command": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "status": {
+          "enum": [
+            "PASS",
+            "FAIL",
+            "NOT_RUN"
+          ]
+        },
+        "evidence_ref": {
+          "$ref": "#/$defs/non_empty_text"
+        }
+      }
+    },
+    "publication": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "identity_key",
+        "state",
+        "branch_refs",
+        "candidate_refs",
+        "pull_request_refs",
+        "state_writeback_ref",
+        "merged",
+        "released",
+        "merge_approval_ref",
+        "release_approval_ref",
+        "recovery_of"
+      ],
+      "properties": {
+        "identity_key": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "state": {
+          "enum": [
+            "NOT_STARTED",
+            "VERIFIED",
+            "DRAFT_OPEN",
+            "BLOCKED",
+            "MERGED",
+            "RELEASED"
+          ]
+        },
+        "branch_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/non_empty_text"
+          }
+        },
+        "candidate_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/non_empty_text"
+          }
+        },
+        "pull_request_refs": {
+          "type": "array",
+          "uniqueItems": true,
+          "items": {
+            "$ref": "#/$defs/non_empty_text"
+          }
+        },
+        "state_writeback_ref": {
+          "$ref": "#/$defs/nullable_non_empty_text"
+        },
+        "merged": {
+          "type": "boolean"
+        },
+        "released": {
+          "type": "boolean"
+        },
+        "merge_approval_ref": {
+          "$ref": "#/$defs/nullable_non_empty_text"
+        },
+        "release_approval_ref": {
+          "$ref": "#/$defs/nullable_non_empty_text"
+        },
+        "recovery_of": {
+          "$ref": "#/$defs/nullable_non_empty_text"
+        }
+      }
+    },
+    "change_accounting": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "method",
+        "total_changed_bytes",
+        "limit_bytes"
+      ],
+      "properties": {
+        "method": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "total_changed_bytes": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "limit_bytes": {
+          "anyOf": [
+            {
+              "type": "integer",
+              "minimum": 0
+            },
+            {
+              "type": "null"
+            }
+          ]
+        }
+      }
+    },
+    "execution_posture": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "temporary_activation",
+        "post_run_state",
+        "restoration_evidence_ref"
+      ],
+      "properties": {
+        "temporary_activation": {
+          "type": "boolean"
+        },
+        "post_run_state": {
+          "enum": [
+            "NOT_APPLICABLE",
+            "DISABLED",
+            "ENABLED"
+          ]
+        },
+        "restoration_evidence_ref": {
+          "$ref": "#/$defs/nullable_non_empty_text"
+        }
+      }
+    }
+  }
+}

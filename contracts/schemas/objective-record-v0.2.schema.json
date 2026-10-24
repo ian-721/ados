@@ -1,0 +1,220 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://ados.local/contracts/objective-record-v0.2.schema.json",
+  "title": "ADOS Canonical Objective Record v0.2",
+  "description": "Machine-exchange form of the ADOS Objective Contract. Markdown views must preserve these semantics.",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "schema_version",
+    "objective_id",
+    "project_id",
+    "contract_version",
+    "contract_ref",
+    "project_harness_ref",
+    "authorization",
+    "status",
+    "outcome",
+    "why_now",
+    "sources",
+    "allowed_scope",
+    "forbidden_scope",
+    "quality_bar",
+    "engineering_acceptance",
+    "product_acceptance",
+    "owner_artifact",
+    "dependencies",
+    "stop_conditions"
+  ],
+  "properties": {
+    "schema_version": {
+      "const": "objective-record/v0.2"
+    },
+    "objective_id": {
+      "$ref": "#/$defs/stable_id"
+    },
+    "project_id": {
+      "$ref": "#/$defs/stable_id"
+    },
+    "contract_version": {
+      "$ref": "#/$defs/semantic_version"
+    },
+    "contract_ref": {
+      "$ref": "#/$defs/immutable_git_ref"
+    },
+    "project_harness_ref": {
+      "$ref": "#/$defs/immutable_git_ref"
+    },
+    "authorization": {
+      "enum": ["DISCOVERY", "PLAN", "IMPLEMENT", "MERGE", "RELEASE"]
+    },
+    "status": {
+      "enum": ["READY", "RUNNING", "OWNER_REVIEW", "BLOCKED", "DONE"]
+    },
+    "outcome": {
+      "$ref": "#/$defs/non_empty_text"
+    },
+    "why_now": {
+      "$ref": "#/$defs/non_empty_text"
+    },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/source"
+      }
+    },
+    "allowed_scope": {
+      "$ref": "#/$defs/non_empty_text_list"
+    },
+    "forbidden_scope": {
+      "$ref": "#/$defs/non_empty_text_list"
+    },
+    "quality_bar": {
+      "$ref": "#/$defs/non_empty_text_list"
+    },
+    "engineering_acceptance": {
+      "$ref": "#/$defs/non_empty_text_list"
+    },
+    "product_acceptance": {
+      "$ref": "#/$defs/non_empty_text_list"
+    },
+    "owner_artifact": {
+      "$ref": "#/$defs/owner_artifact"
+    },
+    "dependencies": {
+      "type": "array",
+      "items": {
+        "$ref": "#/$defs/non_empty_text"
+      }
+    },
+    "stop_conditions": {
+      "$ref": "#/$defs/non_empty_text_list"
+    },
+    "owner_approval_ref": {
+      "$ref": "#/$defs/nullable_non_empty_text"
+    },
+    "owner_acceptance_ref": {
+      "$ref": "#/$defs/nullable_non_empty_text"
+    },
+    "contract_migration": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/contract_migration"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    }
+  },
+  "$defs": {
+    "stable_id": {
+      "type": "string",
+      "minLength": 3,
+      "maxLength": 128,
+      "pattern": "^[A-Za-z0-9][A-Za-z0-9._-]*$"
+    },
+    "semantic_version": {
+      "type": "string",
+      "pattern": "^(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)\\.(0|[1-9][0-9]*)(?:-[0-9A-Za-z.-]+)?(?:\\+[0-9A-Za-z.-]+)?$"
+    },
+    "immutable_git_ref": {
+      "type": "string",
+      "description": "Repository plus full 40-character commit SHA, optionally followed by an exact path fragment.",
+      "pattern": "^[A-Za-z0-9_.-]+/[A-Za-z0-9_.-]+@[0-9a-f]{40}(?:#[A-Za-z0-9._/-]+)?$"
+    },
+    "non_empty_text": {
+      "type": "string",
+      "minLength": 1,
+      "pattern": "\\S"
+    },
+    "nullable_non_empty_text": {
+      "anyOf": [
+        {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        {
+          "type": "null"
+        }
+      ]
+    },
+    "non_empty_text_list": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "$ref": "#/$defs/non_empty_text"
+      }
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "ref", "description"],
+      "properties": {
+        "kind": {
+          "enum": ["issue", "file", "commit", "decision", "runtime", "url", "other"]
+        },
+        "ref": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "description": {
+          "$ref": "#/$defs/non_empty_text"
+        }
+      }
+    },
+    "owner_artifact": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["kind", "location", "description"],
+      "properties": {
+        "kind": {
+          "enum": ["preview", "build", "recording", "screenshot", "document", "report", "demo", "other"]
+        },
+        "location": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "description": {
+          "$ref": "#/$defs/non_empty_text"
+        }
+      }
+    },
+    "pin_set": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["contract_version", "contract_ref", "project_harness_ref"],
+      "properties": {
+        "contract_version": {
+          "$ref": "#/$defs/semantic_version"
+        },
+        "contract_ref": {
+          "$ref": "#/$defs/immutable_git_ref"
+        },
+        "project_harness_ref": {
+          "$ref": "#/$defs/immutable_git_ref"
+        }
+      }
+    },
+    "contract_migration": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": ["from", "to", "reason", "impact", "owner_approval_ref"],
+      "properties": {
+        "from": {
+          "$ref": "#/$defs/pin_set"
+        },
+        "to": {
+          "$ref": "#/$defs/pin_set"
+        },
+        "reason": {
+          "$ref": "#/$defs/non_empty_text"
+        },
+        "impact": {
+          "$ref": "#/$defs/non_empty_text_list"
+        },
+        "owner_approval_ref": {
+          "$ref": "#/$defs/non_empty_text"
+        }
+      }
+    }
+  }
+}

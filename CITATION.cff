@@ -1,0 +1,11 @@
+cff-version: 1.2.0
+message: "Cite this repository and the exact commit used. Cite the WSEOM research agenda separately."
+type: software
+title: "Agentic Delivery OS (ADOS): System Design and Objective & Evidence Reference Kit"
+authors:
+  - family-names: Zhao
+    given-names: Yanyang
+    orcid: "https://orcid.org/0009-0000-7190-4574"
+repository-code: "https://github.com/ian-721/ados"
+url: "https://github.com/ian-721/ados"
+license: Apache-2.0
