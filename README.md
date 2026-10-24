@@ -10,6 +10,14 @@ ADOS is a local-first research and systems project for carrying AI work across s
 
 This is the **public home of Yanyang Zhao's ADOS design, reference kit and complete local prototype source**. It contains the system rationale, architecture, research connections and a runnable Objective & Evidence Kit. The [complete ADOS Local prototype source](prototype/ados-local/README.md) is published under `prototype/ados-local/` as an independent, sanitized source distribution. ADOS is not yet a production service.
 
+## Review the ADOS Local prototype in 10 minutes
+
+- **Start:** [Prototype overview](prototype/ados-local/README.md) — implementation scope, offline setup and limits.
+- **Follow a task:** [Coordinator](prototype/ados-local/src/coordinator) and [compiler](prototype/ados-local/src/compiler) — bounded execution and task contracts.
+- **Inspect durable state:** [Storage](prototype/ados-local/src/storage) and [migrations](prototype/ados-local/migrations) — events, leases, fencing and recovery.
+- **Check safety boundaries:** [Safety checks](prototype/ados-local/src/safety) and [verifiers](prototype/ados-local/src/verifiers) — authority/scope rejection and separate checks.
+- **See evidence and gaps:** [Tests](prototype/ados-local/test) and [validation report](prototype/ados-local/review/OWNER_REVIEW.md) — synthetic results, Windows skips and unverified live integration.
+
 ## The problem: keeping work on track
 
 Imagine asking an agent to improve a checkout page, preserve payment behavior and prepare a preview—but **not deploy it**. Halfway through, the session ends. Later, you change one requirement.
